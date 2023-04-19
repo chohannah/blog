@@ -20,6 +20,10 @@ const Header = () => {
 
   return (
     <header>
+      <h1>
+        <Link href="/">yejin&apos;s blog</Link>
+      </h1>
+
       <nav>
         <ul>{pageMenus}</ul>
       </nav>
