@@ -1,3 +1,5 @@
+import Header from '../components/header'
+
 export const metadata = {
   title: "yejin's blog",
   description: 'tech | mindfulness | design',
@@ -7,13 +9,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
-  const header = (
-    <header>
-      <h1>header</h1>
-    </header>
-  )
-
+}): JSX.Element {
   const footer = (
     <footer>
       <h1>footer</h1>
@@ -23,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {header}
+        <Header />
         {children}
         {footer}
       </body>
