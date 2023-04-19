@@ -1,3 +1,4 @@
+import getPageMetadata from '@/root/lib/page-metadata'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Markdown from 'markdown-to-jsx'
@@ -8,6 +9,13 @@ const getPageContent = (page: string) => {
   const content = fs.readFileSync(file, 'utf8')
   const matterResult = matter(content)
   return matterResult
+}
+
+export const generateStaticParams = async () => {
+  const pages = getPageMetadata()
+  return pages.map((page) => ({
+    slug: page.slug,
+  }))
 }
 
 const Page = (props: any) => {
