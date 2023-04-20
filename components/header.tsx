@@ -15,7 +15,12 @@ const Header = () => {
       </h1>
 
       <nav>
-        <ul>{pageMenus}</ul>
+        <ul>
+          <li>
+            <Link href="/">posts</Link>
+          </li>
+          {pageMenus}
+        </ul>
       </nav>
     </header>
   )
