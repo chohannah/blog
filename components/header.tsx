@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import getPageMetadata from '../lib/page-metadata'
+import PageMenus from './page-menus'
 
 const Header = () => {
   const pageMetadata = getPageMetadata()
   const pageMenus = pageMetadata.map((page) => (
-    // eslint-disable-next-line react/jsx-key
-    <li>
-      <Link href={`${page.slug}`}>{page.title}</Link>
-    </li>
+    <PageMenus key={page.slug} {...page} />
   ))
 
   return (
