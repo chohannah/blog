@@ -1,7 +1,8 @@
+import type { Metadata } from 'next'
 import Header from '../components/header'
 
-export const metadata = {
-  title: "yejin's blog",
+export const metadata: Metadata = {
+  title: 'blog',
   description: 'tech | mindfulness | design',
 }
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Header />
         {children}
         {footer}
