@@ -48,26 +48,30 @@ export const Blog = defineDocumentType(() => ({
       description: 'The title of the post',
       required: true,
     },
-    date: {
-      type: 'string',
-      description: 'The date of the post',
-      required: true,
-    },
     summary: {
       type: 'string',
       description: 'The summary of the post',
+      required: true,
+    },
+    date: {
+      type: 'string',
+      description: 'The date of the post',
       required: true,
     },
     image: {
       type: 'string',
       description: 'The cover image of the post',
     },
+    draft: {
+      type: 'boolean',
+      required: true,
+    },
   },
   computedFields,
 }))
 
 export default makeSource({
-  contentDirPath: 'blog',
+  contentDirPath: 'documents/posts',
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
