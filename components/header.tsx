@@ -1,12 +1,25 @@
-import Link from 'next/link'
-import getPageMetadata from '../lib/page-metadata'
-import PageMenus from './page-menus'
+'use client'
 
-const Header = () => {
-  const pageMetadata = getPageMetadata()
-  const pageMenus = pageMetadata.map((page) => (
-    <PageMenus key={page.slug} {...page} />
-  ))
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+
+const navItems = {
+  '/': {
+    menu: 'home',
+  },
+  '/about': {
+    menu: 'about',
+  },
+  '/blog': {
+    menu: 'blog',
+  },
+}
+
+export default function Header() {
+  let pathname = usePathname() || '/'
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog'
+  }
 
   return (
     <header>
@@ -16,14 +29,16 @@ const Header = () => {
 
       <nav>
         <ul>
-          <li>
-            <Link href="/">posts</Link>
-          </li>
-          {pageMenus}
+          {Object.entries(navItems).map(([path, { menu }]) => {
+            const isActive = path === pathname
+            return (
+              <Link key={path} href={path}>
+                <li>{menu}</li>
+              </Link>
+            )
+          })}
         </ul>
       </nav>
     </header>
   )
 }
-
-export default Header
