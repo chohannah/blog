@@ -1,8 +1,5 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
-
-interface MdxProps {
-  code: string
-}
+import { MdxProps } from '../lib/mdx'
 
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code)
