@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allBlogs } from '@/root/.contentlayer/generated'
-import { Mdx } from '@/root/components/mdx'
+import { MdxRenderer } from '@/root/components/mdx'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -44,7 +44,7 @@ export default async function BlogList({ params }) {
       <h1>{post.title}</h1>
       <p>{post.date}</p>
       <p>{post.summary}</p>
-      <Mdx code={post.body.code} />
+      <MdxRenderer code={post.body.code} />
     </section>
   )
 }
