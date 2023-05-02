@@ -1,11 +1,11 @@
-import getPostMetadata from '../lib/post-metadata'
-import PostPreview from '../components/post-preview'
+import { homeName, homeTitle, homeBody } from '../lib/page-content'
 
-const Home = () => {
-  const postMetadata = getPostMetadata()
-  const postPreviews = postMetadata.map((post) => (
-    <PostPreview key={post.slug} {...post} />
-  ))
-  return <article>{postPreviews}</article>
+export default function HomePage() {
+  return (
+    <section>
+      <h1>{homeName}</h1>
+      <h2>{homeTitle}</h2>
+      <p>{homeBody()}</p>
+    </section>
+  )
 }
-export default Home
