@@ -1,5 +1,6 @@
 'use client'
 
+import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -15,11 +16,12 @@ const navItems = {
   },
 }
 
-export default function Header() {
+export default function Sidebar() {
   let pathname = usePathname() || '/'
   if (pathname.includes('/blog/')) {
     pathname = '/blog'
   }
+  const currentYear = useMemo(() => new Date().getFullYear(), [])
 
   return (
     <header>
@@ -31,6 +33,7 @@ export default function Header() {
         <ul>
           {Object.entries(navItems).map(([path, { menu }]) => {
             const isActive = path === pathname
+
             return (
               <Link key={path} href={path}>
                 <li>{menu}</li>
@@ -39,6 +42,8 @@ export default function Header() {
           })}
         </ul>
       </nav>
+
+      <p>{currentYear}</p>
     </header>
   )
 }
