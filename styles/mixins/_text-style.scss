@@ -1,0 +1,114 @@
+@mixin copyright() {
+  font-family: $font-family-copyright;
+  font-size: $font-size-copyright;
+  line-height: $line-height-copyright;
+  letter-spacing: $letter-spacing-copyright;
+}
+
+@mixin desc() {
+  font-family: $font-family-desc;
+  font-size: $font-size-desc;
+  line-height: $line-height-desc;
+  letter-spacing: $letter-spacing-desc;
+}
+
+@mixin misc-12() {
+  font-family: $font-family-misc-12;
+  font-size: $font-size-misc-12;
+  line-height: $line-height-misc-12;
+  letter-spacing: $letter-spacing-misc-12;
+}
+
+@mixin misc-14() {
+  font-family: $font-family-misc-14;
+  font-size: $font-size-misc-14;
+  line-height: $line-height-misc-14;
+  letter-spacing: $letter-spacing-misc-14;
+}
+
+@mixin link() {
+  font-family: $font-family-link;
+  font-size: $font-size-link;
+  line-height: $line-height-link;
+  letter-spacing: $letter-spacing-link;
+}
+
+@mixin subtitle() {
+  font-family: $font-family-subtitle;
+  font-size: $font-size-subtitle;
+  line-height: $line-height-subtitle;
+  letter-spacing: $letter-spacing-subtitle;
+}
+
+@mixin button() {
+  font-family: $font-family-button;
+  font-size: $font-size-button;
+  font-weight: $font-weight-button;
+  line-height: $line-height-button;
+  letter-spacing: $letter-spacing-button;
+}
+
+@mixin body() {
+  font-family: $font-family-body;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  letter-spacing: $letter-spacing-body;
+}
+
+@mixin heading-20() {
+  font-family: $font-family-heading;
+  font-size: $font-size-heading-20;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
+@mixin heading-24() {
+  font-family: $font-family-heading;
+  font-size: $font-size-heading-24;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
+@mixin heading-32() {
+  font-family: $font-family-heading;
+  font-size: $font-size-heading-32;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
+@mixin text-style($type, $color: false) {
+  @if ($type == 'copyright') {
+    @include copyright;
+  }
+  @if ($type == 'dexc') {
+    @include dexc;
+  }
+  @if ($type == 'misc-12') {
+    @include misc-12;
+  }
+  @if ($type == 'misc-14') {
+    @include misc-14;
+  }
+  @if ($type == 'link') {
+    @include link;
+  }
+  @if ($type == 'subtitle') {
+    @include subtitle;
+  }
+  @if ($type == 'button') {
+    @include button;
+  }
+  @if ($type == 'heading-20') {
+    @include heading-20;
+  }
+  @if ($type == 'heading-24') {
+    @include heading-24;
+  }
+  @if ($type == 'heading-32') {
+    @include heading-32;
+  }
+
+  @if (type-of($color) == color) {
+    color: $color;
+  }
+}
