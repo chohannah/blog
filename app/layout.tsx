@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
 
 import Sidebar from '../components/sidebar'
 
@@ -9,6 +10,13 @@ const cormorant_garamond = Cormorant_Garamond({
   weight: ['300', '600'],
   subsets: ['latin'],
   variable: '--font-cormorant-garamond',
+  display: 'swap',
+})
+
+const fira_code = Fira_Code({
+  weight: ['300', '600'],
+  subsets: ['latin'],
+  variable: '--font-fira-code',
   display: 'swap',
 })
 
@@ -26,7 +34,10 @@ export default function RootLayout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <html lang="en" className={cormorant_garamond.variable}>
+    <html
+      lang="en"
+      className={`${cormorant_garamond.variable} ${fira_code.variable}`}
+    >
       <body suppressHydrationWarning={true}>
         <Sidebar />
         <main>{children}</main>
