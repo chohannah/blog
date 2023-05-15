@@ -1,8 +1,22 @@
 import type { Metadata } from 'next'
-import Header from '../components/header'
+import { Cormorant_Garamond } from 'next/font/google'
+
+import Sidebar from '../components/sidebar'
+
+import '../styles/index.scss'
+
+const cormorant_garamond = Cormorant_Garamond({
+  weight: ['300', '600'],
+  subsets: ['latin'],
+  variable: '--font-cormorant-garamond',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'blog',
+  title: {
+    default: 'yejinc',
+    template: '%s | yejinc',
+  },
   description: 'tech | mindfulness | design',
 }
 
@@ -11,18 +25,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }): JSX.Element {
-  const footer = (
-    <footer>
-      <h1>footer</h1>
-    </footer>
-  )
-
   return (
-    <html lang="en">
+    <html lang="en" className={cormorant_garamond.variable}>
       <body suppressHydrationWarning={true}>
-        <Header />
-        {children}
-        {footer}
+        <Sidebar />
+        <main>{children}</main>
       </body>
     </html>
   )
