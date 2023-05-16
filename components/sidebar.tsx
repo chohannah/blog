@@ -2,19 +2,20 @@
 
 import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
 import { LinkArrowIcon } from './icons'
 
 const navItems = {
-  '/': {
+  '/about': {
     menu: 'about',
   },
-  '/about': {
+  '/blog': {
     menu: 'blog',
   },
-  '/blog': {
+  '/links': {
     menu: 'links',
   },
 }
