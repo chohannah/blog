@@ -1,7 +1,4 @@
-$sm-gutter: 16px;
-$md-gutter: 16px;
-$lg-gutter: 32px;
-
+$gutter: 16px;
 $sm-margin: 8px;
 $sm-columns: 4;
 
@@ -9,5 +6,5 @@ $md-columns: 12;
 $md-margin: 24px;
 
 $lg-columns: 12;
-$lg-unit: 65px;
-$lg-max-container: ($lg-unit + $lg-gutter) * $lg-columns;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
