@@ -45,18 +45,35 @@
         display: inline-block;
         position: relative;
         margin-bottom: 36px;
-        padding: 8px 0;
+        padding: 8px 12px;
+        border-radius: 4px;
 
         &::after {
           content: url(../../public/images/link-underline.svg);
           position: absolute;
           top: 12px;
-          left: 0;
+          left: 12px;
+        }
+
+        &:hover {
+          transition: background-color 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
+          background-color: rgba($green, 0.6);
+
+          &::after {
+            transition: opacity 150ms ease-in-out;
+            opacity: 0;
+          }
+        }
+
+        @keyframes bg-expand {
+          0% {
+          }
         }
       }
 
       .links-list {
         margin-bottom: 36px;
+        padding: 0 12px;
 
         &-item {
           margin-bottom: 16px;
@@ -69,13 +86,21 @@
               @include flex;
               padding-left: 16px;
             }
+
+            &:focus {
+              opacity: 0.6;
+            }
+
+            &:hover {
+              opacity: 0.6;
+            }
           }
         }
       }
 
       .copyright {
         @include text-style(copyright);
-        padding: 8px 0;
+        padding: 8px 12px;
       }
     }
   }
