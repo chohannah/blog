@@ -3,12 +3,14 @@
 @import 'constants/breakpoints';
 @import 'constants/grids';
 
-@import 'base/reset';
-@import 'base/normalize';
-@import 'base/globals';
-
 @import 'mixins/flexbox';
 @import 'mixins/text-style';
 @import 'mixins/responsive';
 
 @import 'layouts/grids';
+
+@import 'components/sidebar';
+
+@import 'base/normalize';
+@import 'base/reset';
+@import 'base/globals';

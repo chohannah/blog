@@ -1,0 +1,82 @@
+.sidebar {
+  &-wrapper {
+    @include flex(between);
+    height: 64px;
+  }
+
+  &-logo {
+    padding: 8px;
+
+    a {
+      @include flex;
+    }
+  }
+
+  &-nav {
+    &-list {
+      @include flex;
+
+      &-item {
+        @include text-style(button);
+        padding: 8px 12px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-wrapper {
+      @include column-flex(start, start);
+    }
+
+    &-logo {
+      margin-bottom: 36px;
+    }
+
+    &-nav {
+      &-list {
+        @include column-flex(center, start);
+        margin-bottom: 36px;
+      }
+    }
+
+    &-links {
+      .email {
+        @include text-style(link);
+        display: inline-block;
+        position: relative;
+        margin-bottom: 36px;
+        padding: 8px 0;
+
+        &::after {
+          content: url(../../public/images/link-underline.svg);
+          position: absolute;
+          top: 12px;
+          left: 0;
+        }
+      }
+
+      .links-list {
+        margin-bottom: 36px;
+
+        &-item {
+          margin-bottom: 16px;
+
+          a {
+            @include flex(start);
+            @include text-style(button);
+
+            .icon-arrow {
+              @include flex;
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        @include text-style(copyright);
+        padding: 8px 0;
+      }
+    }
+  }
+}
