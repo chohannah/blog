@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 64px;
+  height: $sidebar-height-sm;
   padding: 0 8px;
   margin-bottom: 54px;
 
@@ -59,7 +59,8 @@
     @include column-flex(start, start);
     position: sticky;
     height: 100vh;
-    padding: 80px 0;
+    padding: $content-padding 0;
+    margin-bottom: 0;
 
     &-logo {
       margin-bottom: 36px;
