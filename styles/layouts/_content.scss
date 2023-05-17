@@ -1,0 +1,7 @@
+.content {
+  padding: $sidebar-height-sm + 54px 0;
+
+  @include responsive(T) {
+    padding: $content-padding 0;
+  }
+}
