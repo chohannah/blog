@@ -1,10 +1,12 @@
 .sidebar {
+  @include flex(between);
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-
-  &-wrapper {
-    @include flex(between);
-    height: 64px;
-  }
+  height: 64px;
+  padding: 0 8px;
+  margin-bottom: 54px;
 
   &-logo {
     padding: 8px;
@@ -54,12 +56,10 @@
   }
 
   @include responsive(T) {
+    @include column-flex(start, start);
+    position: sticky;
     height: 100vh;
-
-    &-wrapper {
-      @include column-flex(start, start);
-      height: 100%;
-    }
+    padding: 80px 0;
 
     &-logo {
       margin-bottom: 36px;
@@ -95,11 +95,6 @@
           &::after {
             transition: opacity 150ms ease-in-out;
             opacity: 0;
-          }
-        }
-
-        @keyframes bg-expand {
-          0% {
           }
         }
       }
