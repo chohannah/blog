@@ -1,4 +1,6 @@
 .sidebar {
+  width: 100%;
+
   &-wrapper {
     @include flex(between);
     height: 64px;
@@ -16,16 +18,47 @@
     &-list {
       @include flex;
 
+      a {
+        @include flex;
+        transition: all 400ms 200ms ease-in-out;
+
+        &:hover {
+          font-weight: 600;
+          opacity: 1;
+        }
+      }
+
+      .menu-active {
+        font-weight: 600;
+        opacity: 1;
+      }
+
+      .menu-inactive {
+        font-weight: 300;
+        opacity: 0.4;
+      }
+
       &-item {
         @include text-style(button);
+        position: relative;
         padding: 8px 12px;
+
+        .menu-dynamic-bg {
+          position: absolute;
+          inset: 0;
+          border-radius: 4px;
+          background-color: rgba($ghost-white, 0.1);
+        }
       }
     }
   }
 
   @include responsive(T) {
+    height: 100vh;
+
     &-wrapper {
       @include column-flex(start, start);
+      height: 100%;
     }
 
     &-logo {
@@ -34,7 +67,7 @@
 
     &-nav {
       &-list {
-        @include column-flex(center, start);
+        @include column-flex(start, start);
         margin-bottom: 36px;
       }
     }

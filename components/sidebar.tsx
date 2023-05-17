@@ -2,9 +2,11 @@
 
 import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
-
 import Link from 'next/link'
 import Image from 'next/image'
+
+import clsx from 'clsx'
+import { LayoutGroup, motion } from 'framer-motion'
 
 import { LinkArrowIcon } from './icons'
 
@@ -47,62 +49,80 @@ export default function Sidebar() {
   const currentYear = useMemo(() => new Date().getFullYear(), [])
 
   return (
-    <header className="sidebar">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-4 col-md-3 col-lg-2">
-            <div className="sidebar-wrapper">
-              <h1 className="sidebar-logo">
-                <Link href="/">
-                  <Image
-                    width={42}
-                    height={42}
-                    src="/images/logo.svg"
-                    alt="logo of yejin's blog"
-                  />
-                </Link>
-              </h1>
+    <div className="col-sm-4 col-md-3 col-lg-2">
+      <header className="sidebar">
+        <div className="sidebar-wrapper">
+          <h1 className="sidebar-logo">
+            <Link href="/">
+              <Image
+                width={42}
+                height={42}
+                src="/images/logo.svg"
+                alt="logo of yejin's blog"
+              />
+            </Link>
+          </h1>
 
-              <nav className="sidebar-nav">
-                <ul className="sidebar-nav-list">
-                  {Object.entries(navItems).map(([path, { menu }]) => {
-                    const isActive = path === pathname
+          <LayoutGroup>
+            <nav className="sidebar-nav">
+              <ul className="sidebar-nav-list">
+                {Object.entries(navItems).map(([path, { menu }]) => {
+                  const isActive = path === pathname
 
-                    return (
-                      <Link key={path} href={path}>
-                        <li className="sidebar-nav-list-item">{menu}</li>
-                      </Link>
-                    )
-                  })}
-                </ul>
-              </nav>
-
-              <div className="sidebar-links sm-hidden">
-                <Link className="email" href="mailto:hey.yejinc@gmail.com">
-                  hey.yejinc@gmail.com
-                </Link>
-
-                <ul className="links-list">
-                  {socialItems.map((item) => {
-                    return (
-                      <li className="links-list-item" key={item.name}>
-                        <Link href={item.link}>
-                          {item.name}
-                          <span className="icon-arrow">
-                            <LinkArrowIcon />
-                          </span>
-                        </Link>
+                  return (
+                    <Link
+                      key={path}
+                      href={path}
+                      className={clsx({
+                        'menu-active': isActive,
+                        'menu-inactive': !isActive,
+                      })}
+                    >
+                      <li className="sidebar-nav-list-item">
+                        {menu}
+                        {path === pathname ? (
+                          <motion.div
+                            className="menu-dynamic-bg"
+                            layoutId="sidebar"
+                            transition={{
+                              type: 'spring',
+                              stiffness: 216,
+                              damping: 32,
+                            }}
+                          />
+                        ) : null}
                       </li>
-                    )
-                  })}
-                </ul>
+                    </Link>
+                  )
+                })}
+              </ul>
+            </nav>
+          </LayoutGroup>
 
-                <p className="copyright">&copy;{currentYear} yejin cho</p>
-              </div>
-            </div>
+          <div className="sidebar-links sm-hidden">
+            <Link className="email" href="mailto:hey.yejinc@gmail.com">
+              hey.yejinc@gmail.com
+            </Link>
+
+            <ul className="links-list">
+              {socialItems.map((item) => {
+                return (
+                  <li className="links-list-item" key={item.name}>
+                    <Link href={item.link}>
+                      {item.name}
+                      <span className="icon-arrow">
+                        <LinkArrowIcon />
+                      </span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+
+            <p className="copyright">&copy;{currentYear} yejin cho</p>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }
