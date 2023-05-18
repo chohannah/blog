@@ -1,0 +1,22 @@
+.link-outlined-arrow {
+  @include inline-flex;
+  @include text-style(button);
+  padding: 0 16px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba($white, 0.6);
+  background-color: rgba($ghost-white, 0.1);
+  backdrop-filter: blur(12px);
+
+  svg {
+    position: relative;
+    top: 2px;
+    margin-left: 8px;
+    background-color: transparent;
+  }
+
+  @include responsive(D) {
+    padding: 0 24px;
+    height: 48px;
+  }
+}
