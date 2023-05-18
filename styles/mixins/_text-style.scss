@@ -35,6 +35,7 @@
 
 @mixin subtitle() {
   font-family: $font-family-subtitle;
+  font-weight: $font-weight-subtitle;
   font-size: $font-size-subtitle;
   line-height: $line-height-subtitle;
   letter-spacing: $letter-spacing-subtitle;
@@ -42,6 +43,7 @@
 
 @mixin button() {
   font-family: $font-family-button;
+  font-weight: $font-weight-button;
   font-size: $font-size-button;
   font-weight: $font-weight-button;
   line-height: $line-height-button;
@@ -57,6 +59,7 @@
 
 @mixin heading-20() {
   font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   font-size: $font-size-heading-20;
   line-height: $line-height-heading;
   letter-spacing: $letter-spacing-heading;
@@ -64,6 +67,7 @@
 
 @mixin heading-24() {
   font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   font-size: $font-size-heading-24;
   line-height: $line-height-heading;
   letter-spacing: $letter-spacing-heading;
@@ -71,6 +75,7 @@
 
 @mixin heading-32() {
   font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   font-size: $font-size-heading-32;
   line-height: $line-height-heading;
   letter-spacing: $letter-spacing-heading;
