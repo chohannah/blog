@@ -8,7 +8,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { LayoutGroup, motion } from 'framer-motion'
 
-import { LinkArrowIcon } from './icons'
+import LinkGhostArrow from './link-ghost-arrow'
 
 const navItems = {
   '/about': {
@@ -108,12 +108,7 @@ export default function Sidebar() {
             {socialItems.map((item) => {
               return (
                 <li className="links-list-item" key={item.name}>
-                  <Link href={item.link}>
-                    {item.name}
-                    <span className="icon-arrow">
-                      <LinkArrowIcon />
-                    </span>
-                  </Link>
+                  <LinkGhostArrow href={item.link}>{item.name}</LinkGhostArrow>
                 </li>
               )
             })}
