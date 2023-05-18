@@ -58,6 +58,7 @@ export default function Sidebar() {
               height={42}
               src="/images/logo.svg"
               alt="logo of yejin's blog"
+              priority
             />
           </Link>
         </h1>
