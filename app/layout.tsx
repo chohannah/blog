@@ -3,6 +3,7 @@ import { Cormorant_Garamond } from 'next/font/google'
 import { Fira_Code } from 'next/font/google'
 
 import Sidebar from '../components/sidebar'
+import Content from '../components/content'
 
 import '../styles/index.scss'
 
@@ -39,8 +40,12 @@ export default function RootLayout({
       className={`${cormorant_garamond.variable} ${fira_code.variable}`}
     >
       <body suppressHydrationWarning={true}>
-        <Sidebar />
-        <main>{children}</main>
+        <div className="container">
+          <div className="row">
+            <Sidebar />
+            <Content>{children}</Content>
+          </div>
+        </div>
       </body>
     </html>
   )
