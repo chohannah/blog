@@ -1,0 +1,14 @@
+.home {
+  &-title {
+    @include text-style(heading-32);
+    margin-bottom: 16px;
+  }
+
+  p {
+    @include text-style(body);
+
+    &:last-child {
+      margin-bottom: 48px;
+    }
+  }
+}
