@@ -70,12 +70,16 @@
       &-list {
         @include column-flex(start, start);
         margin-bottom: 36px;
+
+        &-item {
+          font-size: 20px;
+        }
       }
     }
 
     &-links {
       .email {
-        @include text-style(link);
+        @include text-style(button);
         display: inline-block;
         position: relative;
         margin-bottom: 36px;
@@ -106,29 +110,11 @@
 
         &-item {
           margin-bottom: 16px;
-
-          a {
-            @include flex(start);
-            @include text-style(button);
-
-            .icon-arrow {
-              @include flex;
-              padding-left: 16px;
-            }
-
-            &:focus {
-              opacity: 0.6;
-            }
-
-            &:hover {
-              opacity: 0.6;
-            }
-          }
         }
       }
 
       .copyright {
-        @include text-style(copyright);
+        @include text-style(copyright, rgba($ghost-white, 0.6));
         padding: 8px 12px;
       }
     }
