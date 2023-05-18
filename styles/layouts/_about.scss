@@ -1,0 +1,76 @@
+.about {
+  padding: 28px 0;
+
+  &-intro,
+  &-details,
+  &-values {
+    margin-bottom: 108px;
+  }
+
+  &-intro,
+  &-details {
+    p {
+      @include text-style(body);
+    }
+  }
+
+  &-intro-title,
+  &-details-title,
+  &-values-title {
+    @include text-style(heading-32);
+  }
+
+  &-details-title {
+    margin-bottom: 16px;
+  }
+
+  &-intro-title,
+  &-values-title {
+    margin-bottom: 36px;
+  }
+
+  &-values {
+    &-list {
+      &-item {
+        dt {
+          @include text-style(subtitle);
+          margin-bottom: 16px;
+
+          sup {
+            margin-right: 4px;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 1.2;
+            color: rgba($ghost-white, 0.6);
+          }
+        }
+
+        dd {
+          @include text-style(body);
+          margin-bottom: 1rem;
+
+          &:last-child {
+            margin-bottom: 36px;
+          }
+        }
+      }
+    }
+  }
+
+  &-image {
+    @include flex;
+    position: relative;
+    margin-bottom: 108px;
+    width: 100%;
+    min-height: 288px;
+    max-height: 355px;
+    overflow: hidden;
+    border-radius: 4px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
