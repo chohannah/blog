@@ -11,3 +11,15 @@
   border: 0 !important;
   overflow: hidden !important;
 }
+
+.sm-hidden {
+  @media screen and (max-width: ($md-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.sm-only {
+  @media screen and (min-width: $md-breakpoint) {
+    display: none !important;
+  }
+}
