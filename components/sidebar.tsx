@@ -9,37 +9,7 @@ import clsx from 'clsx'
 import { LayoutGroup, motion } from 'framer-motion'
 
 import LinkGhostArrow from './link-ghost-arrow'
-
-const navItems = {
-  '/about': {
-    menu: 'about',
-  },
-  '/blog': {
-    menu: 'blog',
-  },
-  '/links': {
-    menu: 'links',
-  },
-}
-
-const socialItems = [
-  {
-    name: 'GitHub',
-    link: 'https://github.com/yejinc',
-  },
-  {
-    name: 'Playlist',
-    link: 'https://music.apple.com/profile/yejinlistens',
-  },
-  {
-    name: 'Read.cv',
-    link: 'https://read.cv/yejincho',
-  },
-  {
-    name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/yjincho/',
-  },
-]
+import { siteConfig } from '../config'
 
 export default function Sidebar() {
   let pathname = usePathname() || '/'
@@ -66,7 +36,7 @@ export default function Sidebar() {
         <LayoutGroup>
           <nav className="sidebar-nav">
             <ul className="sidebar-nav-list">
-              {Object.entries(navItems).map(([path, { menu }]) => {
+              {Object.entries(siteConfig.navItems).map(([path, { menu }]) => {
                 const isActive = path === pathname
 
                 return (
@@ -101,11 +71,11 @@ export default function Sidebar() {
 
         <div className="sidebar-links sm-hidden">
           <Link className="email" href="mailto:hey.yejinc@gmail.com">
-            hey.yejinc@gmail.com
+            {siteConfig.email}
           </Link>
 
           <ul className="links-list">
-            {socialItems.map((item) => {
+            {siteConfig.socialItems.map((item) => {
               return (
                 <li className="links-list-item" key={item.name}>
                   <LinkGhostArrow href={item.link}>{item.name}</LinkGhostArrow>
@@ -114,7 +84,9 @@ export default function Sidebar() {
             })}
           </ul>
 
-          <p className="copyright">&copy;{currentYear} yejin cho</p>
+          <p className="copyright">
+            &copy;{currentYear} {siteConfig.name}
+          </p>
         </div>
       </header>
     </div>

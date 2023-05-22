@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond } from 'next/font/google'
 import { Fira_Code } from 'next/font/google'
 
+import { siteConfig } from '../config'
 import Sidebar from '../components/sidebar'
 import Content from '../components/content'
 
@@ -23,10 +24,10 @@ const fira_code = Fira_Code({
 
 export const metadata: Metadata = {
   title: {
-    default: 'yejinc',
-    template: '%s | yejinc',
+    default: `${siteConfig.title}`,
+    template: `${siteConfig.template}`,
   },
-  description: 'tech | mindfulness | design',
+  description: `${siteConfig.description}`,
 }
 
 export default function RootLayout({
