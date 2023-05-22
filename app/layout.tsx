@@ -4,6 +4,7 @@ import { Fira_Code } from 'next/font/google'
 
 import { siteConfig } from '../config'
 import Sidebar from '../components/sidebar'
+import Footer from '../components/footer'
 import Content from '../components/content'
 
 import '../styles/index.scss'
@@ -45,6 +46,7 @@ export default function RootLayout({
           <div className="row">
             <Sidebar />
             <Content>{children}</Content>
+            <Footer />
           </div>
         </div>
       </body>

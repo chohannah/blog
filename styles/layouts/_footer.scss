@@ -1,0 +1,77 @@
+.footer {
+  margin: 0 auto;
+  padding: 54px 0;
+  max-width: 400px;
+
+  .email {
+    @include flex(between);
+    @include text-style(button);
+    display: inline-block;
+    position: relative;
+    margin-bottom: 36px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: $bg;
+
+    &::after {
+      content: '';
+      background-image: url('../../public/images/wave-part.svg');
+      background-repeat: repeat-x;
+    }
+
+    &:hover {
+      transition: background-color 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
+      background-color: rgba($green, 0.6);
+
+      &::after {
+        transition: opacity 150ms ease-in-out;
+        opacity: 0;
+      }
+    }
+  }
+
+  .links-list {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto 36px;
+    padding: 0 12px;
+    max-width: 280px;
+
+    &-item {
+      margin-bottom: 16px;
+
+      .item-text {
+        @include text-style(button);
+        width: 70px;
+      }
+    }
+  }
+
+  .copyright {
+    @include text-style(link, rgba($ghost-white, 0.6));
+    padding: 8px 12px;
+    text-align: end;
+  }
+
+  @include responsive(S) {
+    max-width: 100%;
+    margin-bottom: 54px;
+
+    .links-list {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 1fr);
+      //   padding: 0 16px;
+      max-width: 100%;
+      gap: 8px;
+
+      &-item {
+        margin-bottom: 0;
+
+        .item-text {
+          width: 60px;
+        }
+      }
+    }
+  }
+}
