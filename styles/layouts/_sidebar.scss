@@ -90,7 +90,7 @@
           content: url(../../public/images/link-underline.svg);
           position: absolute;
           top: 12px;
-          left: 12px;
+          left: 8px;
         }
 
         &:hover {
@@ -110,11 +110,16 @@
 
         &-item {
           margin-bottom: 16px;
+
+          .item-text {
+            @include text-style(button);
+            width: 70px;
+          }
         }
       }
 
       .copyright {
-        @include text-style(copyright, rgba($ghost-white, 0.6));
+        @include text-style(link, rgba($ghost-white, 0.6));
         padding: 8px 12px;
       }
     }
