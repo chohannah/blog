@@ -5,11 +5,6 @@ $font-mono: var(--font-fira-code);
 $font-weight-main: 300;
 $font-weight-bold: 600;
 
-$font-family-copyright: $font-heading;
-$font-size-copyright: 14px;
-$line-height-copyright: 1.2;
-$letter-spacing-copyright: 0.01em;
-
 $font-family-desc: $font-main;
 $font-size-desc: 12px;
 $line-height-desc: 1.2;
@@ -28,7 +23,7 @@ $letter-spacing-misc-14: -0.02em;
 $font-family-link: $font-heading;
 $font-size-link: 14px;
 $line-height-link: 1.2;
-$letter-spacing-link: normal;
+$letter-spacing-link: 0.01em;
 
 $font-family-subtitle: $font-main;
 $font-weight-subtitle: $font-weight-bold;
