@@ -23,9 +23,9 @@ export default function BlogPage() {
         .map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
             <article>
-              <Balancer>
-                <h2>{post.title}</h2>
-              </Balancer>
+              <h2>
+                <Balancer>{post.title}</Balancer>
+              </h2>
             </article>
           </Link>
         ))}
