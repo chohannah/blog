@@ -6,6 +6,7 @@
 
   p {
     @include text-style(body);
+    margin-bottom: 1rem;
 
     &:last-child {
       margin-bottom: 48px;
