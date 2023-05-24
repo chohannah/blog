@@ -5,11 +5,6 @@ $font-mono: var(--font-fira-code);
 $font-weight-main: 300;
 $font-weight-bold: 600;
 
-$font-family-desc: $font-main;
-$font-size-desc: 12px;
-$line-height-desc: 1.2;
-$letter-spacing-desc: 0.01em;
-
 $font-family-misc-12: $font-mono;
 $font-size-misc-12: 12px;
 $line-height-misc-12: 1.2;
@@ -19,6 +14,11 @@ $font-family-misc-14: $font-mono;
 $font-size-misc-14: 14px;
 $line-height-misc-14: 1.2;
 $letter-spacing-misc-14: -0.02em;
+
+$font-family-desc: $font-main;
+$font-size-desc: 14px;
+$line-height-desc: 1.2;
+$letter-spacing-desc: 0.01em;
 
 $font-family-link: $font-heading;
 $font-size-link: 14px;
@@ -33,7 +33,6 @@ $letter-spacing-subtitle: 0.01em;
 
 $font-family-button: $font-heading;
 $font-weight-button: $font-weight-bold;
-$font-weight-button: 600;
 $font-size-button: 16px;
 $line-height-button: 1.2;
 $letter-spacing-button: normal;
