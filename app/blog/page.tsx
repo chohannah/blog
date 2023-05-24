@@ -1,17 +1,21 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Balancer from 'react-wrap-balancer'
+import Link from 'next/link'
+import Image from 'next/image'
 import { allBlogs } from '@/root/.contentlayer/generated'
 
+import { CalendarIcon, ClockIcon } from '@/root/components/icons'
+
 export const metadata: Metadata = {
-  title: "blog | yejin's space",
+  title: 'blog | joyejin',
   description: 'thoughs on tech, mindfulness, design and more',
 }
 
-export default function BlogPage() {
+const BlogPage = () => {
   return (
-    <section>
-      <h1>blog</h1>
+    <section className="blog">
+      <h1 className="blog-title">blog</h1>
+
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.date) > new Date(b.date)) {
@@ -21,14 +25,55 @@ export default function BlogPage() {
           return 1
         })
         .map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <article>
-              <h2>
-                <Balancer>{post.title}</Balancer>
-              </h2>
+          <Link
+            className="blog-list-post"
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+          >
+            <article className="blog-list-post-wrapper">
+              <div className="post-image">
+                <Image
+                  width={348}
+                  height={261}
+                  src={`${post?.image}`}
+                  alt={`${post.title}'s thumbnail image`}
+                  layout="responsive"
+                />
+              </div>
+
+              <div className="post-content">
+                <div className="text-group">
+                  <h2 className="title">
+                    <Balancer>{post.title}</Balancer>
+                  </h2>
+                  <p className="desc">{post.summary}</p>
+                </div>
+
+                <div className="misc">
+                  <div className="misc-date">
+                    <span className="icon-wrapper">
+                      <CalendarIcon />
+                    </span>
+                    <time className="date" dateTime={post.date}>
+                      2023-05-23
+                    </time>
+                  </div>
+                  <div className="misc-reading-time">
+                    <span className="icon-wrapper">
+                      <ClockIcon />
+                    </span>
+                    <p className="reading-time">{post.readingMinutes} min.</p>
+                  </div>
+                </div>
+
+                <ul className="tags-list">
+                  <li className="tags-list-item">{post.tags}</li>
+                </ul>
+              </div>
             </article>
           </Link>
         ))}
     </section>
   )
 }
+export default BlogPage
