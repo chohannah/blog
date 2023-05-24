@@ -75,8 +75,8 @@
 }
 
 @mixin text-style($type, $color: false) {
-  @if ($type == 'dexc') {
-    @include dexc;
+  @if ($type == 'desc') {
+    @include desc;
   }
   @if ($type == 'misc-12') {
     @include misc-12;
