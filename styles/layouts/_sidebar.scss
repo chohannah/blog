@@ -8,6 +8,8 @@
   height: $sidebar-height-sm;
   padding: 0 8px;
   margin-bottom: 54px;
+  background-color: rgba($bg, 0.6);
+  backdrop-filter: blur(10px);
 
   &-logo {
     padding: 8px;
@@ -62,6 +64,8 @@
     height: 100vh;
     padding: $content-padding 0;
     margin-bottom: 0;
+    background-color: $bg;
+    backdrop-filter: 0;
 
     &-logo {
       margin-bottom: 36px;
