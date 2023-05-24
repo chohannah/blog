@@ -3,7 +3,6 @@
   box-sizing: border-box;
   font-family: $font-main;
   color: $ghost-white;
-  background-color: $bg;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,6 +10,7 @@
 html {
   font-family: $font-main;
   font-size: 16px;
+  background-color: $bg;
 }
 
 body {
