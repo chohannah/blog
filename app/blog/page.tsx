@@ -31,15 +31,18 @@ const BlogPage = () => {
             href={`/blog/${post.slug}`}
           >
             <article className="blog-list-post-wrapper">
-              <div className="post-image">
-                <Image
-                  width={348}
-                  height={261}
-                  src={`${post?.image}`}
-                  alt={`${post.title}'s thumbnail image`}
-                  layout="responsive"
-                />
-              </div>
+              {post.image ? (
+                <div className="post-image">
+                  <Image
+                    fill
+                    src={`${post.image}`}
+                    alt={`${post.title}'s thumbnail image`}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
+                    loading="lazy"
+                  />
+                </div>
+              ) : null}
 
               <div className="post-content">
                 <div className="text-group">
