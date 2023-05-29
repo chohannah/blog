@@ -1,6 +1,6 @@
 .blog {
   &-title {
-    @include text-style(heading-32);
+    @include text-style(heading-20);
     margin-bottom: 54px;
   }
 
@@ -27,17 +27,19 @@
       border-radius: 4px;
       margin-bottom: 24px;
       overflow: hidden;
+      min-width: 256px;
+      min-height: 192px;
+      max-height: 527.25px;
 
       img {
-        min-width: 256px;
-        max-width: 348px;
-        min-height: 192px;
-        max-height: 261px;
-        background-color: $bg-card;
+        object-fit: cover;
       }
     }
 
     .post-content {
+      @include inline-flex(center, start);
+      flex-direction: column;
+
       .text-group {
         margin-bottom: 16px;
 
@@ -104,5 +106,26 @@
   }
 
   @include responsive(T) {
+    &-list-post {
+      &-wrapper {
+        @include flex(start);
+        flex-wrap: nowrap;
+      }
+
+      .post-image {
+        @include inline-flex;
+        margin: 0 16px 0 0;
+        min-width: 208px;
+        max-width: 348px;
+        min-height: 156px;
+        max-height: 261px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-title {
+      @include text-style(heading-24);
+    }
   }
 }
