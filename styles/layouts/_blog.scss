@@ -39,7 +39,7 @@
 
     .post-content {
       .text-group {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
 
         .title {
           margin-bottom: 8px;
@@ -51,11 +51,16 @@
 
         .desc {
           @include text-style(desc);
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          white-space: pre-wrap;
         }
       }
 
       .misc {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
 
         &-date,
         &-reading-time {
@@ -96,5 +101,8 @@
         }
       }
     }
+  }
+
+  @include responsive(T) {
   }
 }
