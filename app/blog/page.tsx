@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const BlogPage = () => {
   return (
     <section className="blog">
-      <h1 className="blog-title">blog</h1>
+      <h1 className="blog-title">All Posts ({allBlogs.length})</h1>
 
       {allBlogs
         .sort((a, b) => {
