@@ -70,7 +70,12 @@ const BlogPage = () => {
                 </div>
 
                 <ul className="tags-list">
-                  <li className="tags-list-item">{post.tags}</li>
+                  {post.tags &&
+                    post.tags.map((tag, i) => (
+                      <li key={i} className="tags-list-item">
+                        {tag}
+                      </li>
+                    ))}
                 </ul>
               </div>
             </article>
