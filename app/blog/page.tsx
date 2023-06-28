@@ -26,11 +26,11 @@ const BlogPage = () => {
         })
         .map((post) => (
           <Link
-            className="blog-list-post"
+            className="blog-list-post-wrapper"
             key={post.slug}
             href={`/blog/${post.slug}`}
           >
-            <article className="blog-list-post-wrapper">
+            <article className="blog-list-post">
               {post.image ? (
                 <div className="post-image">
                   <Image
