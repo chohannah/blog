@@ -32,12 +32,12 @@
 
   &:focus {
     opacity: 0.6;
-    transition: opacity 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    transition: opacity 350ms $default-easing;
   }
 
   &:hover {
     opacity: 0.6;
-    transition: opacity 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    transition: opacity 350ms $default-easing;
   }
 
   @include responsive(T) {
