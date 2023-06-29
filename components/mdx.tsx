@@ -1,11 +1,11 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { MdxProps } from '../types/mdx'
 
-export function MdxRenderer({ code }: MdxProps) {
+export const MdxRenderer = ({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
 
   return (
-    <article>
+    <article className="mdx">
       <Component />
     </article>
   )
