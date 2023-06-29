@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { allBlogs } from '@/root/.contentlayer/generated'
 
 import { CalendarIcon, ClockIcon } from '@/root/components/icons'
+import Tag from '@/root/components/tag'
 
 export const metadata: Metadata = {
   title: 'blog | joyejin',
@@ -71,11 +72,7 @@ const BlogPage = () => {
 
                 <ul className="tags-list">
                   {post.tags &&
-                    post.tags.map((tag, i) => (
-                      <li key={i} className="tags-list-item">
-                        {tag}
-                      </li>
-                    ))}
+                    post.tags.map((tag, i) => <Tag key={i} tag={tag} />)}
                 </ul>
               </div>
             </article>
