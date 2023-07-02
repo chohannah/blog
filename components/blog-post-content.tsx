@@ -5,7 +5,7 @@ export const MdxRenderer = ({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
 
   return (
-    <article className="mdx">
+    <article className="blog-post-content">
       <Component />
     </article>
   )
