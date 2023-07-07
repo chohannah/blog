@@ -44,10 +44,6 @@
   @include responsive(T) {
     padding: 0 $md-margin;
 
-    .row {
-      margin: 0 32px;
-    }
-
     @for $i from 1 through $md-columns {
       .col-md-#{$i} {
         width: percentage($i / $md-columns);
@@ -59,10 +55,6 @@
   @include responsive(D) {
     max-width: $lg-max-container;
     padding: 0;
-
-    .row {
-      margin: 0;
-    }
 
     @for $i from 1 through $lg-columns {
       .col-lg-#{$i} {
