@@ -78,7 +78,9 @@ export default function Sidebar() {
             {siteConfig.socialItems.map((item) => {
               return (
                 <li className="links-list-item" key={item.name}>
-                  <LinkGhostArrow href={item.link}>{item.name}</LinkGhostArrow>
+                  <LinkGhostArrow href={item.link}>
+                    <span className="item-text">{item.name}</span>
+                  </LinkGhostArrow>
                 </li>
               )
             })}
