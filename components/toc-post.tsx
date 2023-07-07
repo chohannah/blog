@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import tocbot from 'tocbot'
 
-const Toc = () => {
+const TocPost = () => {
   useEffect(() => {
     tocbot.init({
       tocSelector: '.toc-list-wrapper', // Select the wrapper of toc
@@ -24,12 +24,11 @@ const Toc = () => {
   }, [])
 
   return (
-    <aside className="blog-post-content-toc">
+    <aside className="blog-post-content-toc sm-only">
       <h2 className="toc-title">Table of Contents</h2>
-
       <div className="toc-list-wrapper"></div>
     </aside>
   )
 }
 
-export default Toc
+export default TocPost
