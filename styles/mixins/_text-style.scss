@@ -46,6 +46,7 @@
 @mixin body() {
   font-family: $font-family-body;
   font-size: $font-size-body;
+  font-weight: $font-weight-body;
   line-height: $line-height-body;
   letter-spacing: $letter-spacing-body;
 }
@@ -116,6 +117,9 @@
   }
   @if ($type == 'button') {
     @include button;
+  }
+  @if ($type == 'body') {
+    @include body;
   }
   @if ($type == 'blog-content-heading-20') {
     @include blog-content-heading-20;
