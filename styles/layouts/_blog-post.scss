@@ -22,7 +22,7 @@
       // width: calc(100vw - ($gutter + $sm-margin * 2));
       // height: calc((100vw - ($gutter + $sm-margin * 2)) * 0.75);
       border-radius: 4px;
-      overflow-wrap: hidden;
+      overflow: hidden;
 
       img {
         object-fit: cover;
