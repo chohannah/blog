@@ -19,8 +19,8 @@
       @include flex;
       position: relative;
       margin-bottom: 16px;
-      min-width: calc(100vw - ($gutter + $sm-margin * 2));
-      min-height: calc((100vw - ($gutter + $sm-margin * 2)) * 0.75);
+      // width: calc(100vw - ($gutter + $sm-margin * 2));
+      // height: calc((100vw - ($gutter + $sm-margin * 2)) * 0.75);
       border-radius: 4px;
       overflow-wrap: hidden;
 
@@ -133,4 +133,31 @@
       @extend %divider-hr;
     }
   }
+
+  //@include responsive(T) {
+  // .post-image {
+  //   width: calc(
+  //     100vw -
+  //       calc(
+  //         percentage(3 / $md-columns) + ($gutter * 4) + ($md-margin * 2) + 1px
+  //       )
+  //   );
+  //   height: calc(
+  //     calc(
+  //         100vw -
+  //           calc(
+  //             percentage(3 / $md-columns) + ($gutter * 4) + ($md-margin * 2) +
+  //               1px
+  //           )
+  //       ) * 0.75
+  //   );
+  // }
+  //}
+
+  //@include responsive(D) {
+  // .post-image {
+  //   width: calc($lg-max-container - ($lg-unit * 3) - ($gutter * 4));
+  //   height: calc(($lg-max-container - ($lg-unit * 3) - ($gutter * 4)) * 0.75);
+  // }
+  //}
 }
