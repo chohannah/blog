@@ -12,19 +12,19 @@
     padding: 8px 16px;
     border-radius: 4px;
     background-color: $bg;
+    transition: background-color 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
 
     &::after {
       content: '';
       background-image: url('../../public/images/wave-part.svg');
       background-repeat: repeat-x;
+      transition: opacity 150ms ease-in-out;
     }
 
     &:hover {
-      transition: background-color 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
       background-color: rgba($green, 0.6);
 
       &::after {
-        transition: opacity 150ms ease-in-out;
         opacity: 0;
       }
     }
