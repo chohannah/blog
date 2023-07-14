@@ -10,7 +10,6 @@ import { LayoutGroup, motion } from 'framer-motion'
 
 import LinkGhostArrow from './link-ghost-arrow'
 import { siteConfig } from '../config'
-import TocSidebar from './toc-sidebar'
 
 export default function Sidebar() {
   let pathname = usePathname() || '/'
@@ -91,8 +90,6 @@ export default function Sidebar() {
             &copy;{currentYear} {siteConfig.name}
           </p>
         </div>
-
-        <TocSidebar />
       </header>
     </div>
   )
