@@ -15,7 +15,7 @@
     background-color: transparent;
   }
 
-  @include responsive(D) {
+  @include responsive(T) {
     padding: 0 24px;
     height: 48px;
   }
@@ -24,20 +24,16 @@
 .link-ghost-arrow {
   @include flex(start);
   @include text-style(button);
+  transition: opacity 350ms $default-easing;
 
   .icon-arrow {
     @include flex;
     padding-left: 16px;
   }
 
+  &:hover,
   &:focus {
     opacity: 0.6;
-    transition: opacity 350ms $default-easing;
-  }
-
-  &:hover {
-    opacity: 0.6;
-    transition: opacity 350ms $default-easing;
   }
 
   @include responsive(T) {
