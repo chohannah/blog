@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import tocbot from 'tocbot'
 
 const TocPost = () => {
+  const [shouldAdjustTocHeight, setShouldAdjustTocHeight] = useState(false)
+
   useEffect(() => {
     tocbot.init({
       tocSelector: '.toc-list-wrapper',
@@ -16,25 +18,39 @@ const TocPost = () => {
     })
 
     const adjustTocHeight = () => {
-      const tocWrapper = document.querySelector(
+      const toc = document.querySelector(
         '.blog-post-content-toc'
       ) as HTMLElement | null
       const blogPostContent = document.querySelector(
         '.blog-post-content'
       ) as HTMLElement | null
       const mdBreakpoint = 768
-      if (tocWrapper && blogPostContent && window.innerWidth >= mdBreakpoint) {
-        tocWrapper.style.height = `${blogPostContent.clientHeight}px`
+
+      if (toc && blogPostContent) {
+        if (window.innerWidth >= mdBreakpoint) {
+          if (!shouldAdjustTocHeight) {
+            // adjust TOC height when screen size >= 768px
+            setShouldAdjustTocHeight(true)
+          }
+          toc.style.height = `${blogPostContent.clientHeight}px`
+        } else {
+          if (shouldAdjustTocHeight) {
+            // revert TOC height when screen size < 768px
+            setShouldAdjustTocHeight(false)
+            toc.style.height = ''
+          }
+        }
       }
     }
 
     adjustTocHeight()
     window.addEventListener('resize', adjustTocHeight)
+
     return () => {
       tocbot.destroy()
       window.removeEventListener('resize', adjustTocHeight)
     }
-  }, [])
+  }, [shouldAdjustTocHeight])
 
   return (
     <aside className="blog-post-content-toc">
