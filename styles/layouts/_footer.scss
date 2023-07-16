@@ -12,7 +12,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     background-color: $bg;
-    transition: background-color 350ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    transition: background-color 350ms $ease-in-out-quart;
 
     &::after {
       content: '';
