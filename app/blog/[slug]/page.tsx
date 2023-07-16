@@ -8,6 +8,7 @@ import Balancer from 'react-wrap-balancer'
 import { CalendarIcon, ClockIcon } from '@/root/components/icons'
 import Tag from '@/root/components/tag'
 import PostNav from '@/root/components/post-nav'
+import ScrollToTopButton from '@/root/components/scroll-to-top-button'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -95,6 +96,8 @@ export default async function BlogList({ params }: { params: any }) {
           {post.tags && post.tags.map((tag, i) => <Tag key={i} tag={tag} />)}
         </ul>
       </article>
+
+      <ScrollToTopButton />
 
       <MdxRenderer code={post.body.code} />
 
