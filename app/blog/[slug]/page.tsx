@@ -7,6 +7,7 @@ import Balancer from 'react-wrap-balancer'
 
 import { CalendarIcon, ClockIcon } from '@/root/components/icons'
 import Tag from '@/root/components/tag'
+import PostNav from '@/root/components/post-nav'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -45,6 +46,10 @@ export default async function BlogList({ params }: { params: any }) {
   if (!post) {
     notFound()
   }
+
+  const currentIndex = allBlogs.findIndex((p) => p.slug === params.slug)
+  const prevPost = allBlogs[currentIndex - 1]
+  const nextPost = allBlogs[currentIndex + 1]
 
   return (
     <section className="blog-post">
@@ -92,6 +97,8 @@ export default async function BlogList({ params }: { params: any }) {
       </article>
 
       <MdxRenderer code={post.body.code} />
+
+      <PostNav prevPost={prevPost} nextPost={nextPost} />
     </section>
   )
 }
