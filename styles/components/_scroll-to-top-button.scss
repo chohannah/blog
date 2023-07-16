@@ -1,0 +1,27 @@
+.scroll-to-top-button {
+  @include flex;
+  position: fixed;
+  right: 5%;
+  bottom: 2.726%;
+  padding: 12px;
+  z-index: 108;
+  border: 1px solid rgba($ghost-white, 0.2);
+  border-radius: 50%;
+  background-color: rgba($bg-card, 0.2);
+  backdrop-filter: blur(12px);
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+  }
+
+  @include responsive(T) {
+    padding: 16px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
