@@ -24,35 +24,6 @@
   }
 
   &-prev {
-    &::before {
-      @extend %circle-base;
-      left: -24vw;
-      background-color: $main-purple;
-      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
-        left 400ms $ease-out-quart;
-    }
-
-    &:hover {
-      &::before {
-        left: 0vw;
-      }
-
-      .post-nav-prev-icon {
-        transform: translateX(8px);
-      }
-    }
-
-    &:active {
-      background-color: $main-purple;
-
-      &::before {
-        width: 240px;
-        height: 240px;
-      }
-    }
-  }
-
-  &-next {
     flex-direction: row-reverse;
 
     &::after {
@@ -68,15 +39,44 @@
         right: 0vw;
       }
 
-      .post-nav-next-icon {
+      .post-nav-prev-icon {
         transform: translateX(-8px);
+      }
+    }
+
+    &:active {
+      background-color: $main-purple;
+
+      &::after {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+
+  &-next {
+    &::before {
+      @extend %circle-base;
+      left: -24vw;
+      background-color: $main-purple;
+      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
+        left 400ms $ease-out-quart;
+    }
+
+    &:hover {
+      &::before {
+        left: 0vw;
+      }
+
+      .post-nav-next-icon {
+        transform: translateX(8px);
       }
     }
 
     &:active {
       background-color: $main-cambridge-blue;
 
-      &::after {
+      &::before {
         width: 240px;
         height: 240px;
       }
@@ -100,20 +100,20 @@
   }
 
   &-prev-text {
-    @include column-flex(center, end);
-    margin-right: 24px;
-
-    .title {
-      text-align: end;
-    }
-  }
-
-  &-next-text {
     @include column-flex(center, start);
     margin-left: 16px;
 
     .title {
       text-align: start;
+    }
+  }
+
+  &-next-text {
+    @include column-flex(center, end);
+    margin-right: 24px;
+
+    .title {
+      text-align: end;
     }
   }
 
@@ -129,7 +129,7 @@
     }
   }
 
-  &-next-icon {
+  &-prev-icon {
     svg {
       transform: rotate(180deg);
     }
