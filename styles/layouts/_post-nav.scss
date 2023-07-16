@@ -1,0 +1,137 @@
+%circle-base {
+  content: '';
+  @include pos-center-y;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(24px);
+}
+
+.post-nav {
+  @include column-flex;
+
+  &-prev,
+  &-next {
+    @include flex;
+    position: relative;
+    padding: 0 16px;
+    width: 100%;
+    height: 108px;
+    overflow: hidden;
+    transition: background-color 350ms $ease-in-out-quart,
+      transform 350ms $ease-in-out-quart;
+  }
+
+  &-prev {
+    &::before {
+      @extend %circle-base;
+      left: -24vw;
+      background-color: $main-purple;
+      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
+        left 400ms $ease-out-quart;
+    }
+
+    &:hover {
+      &::before {
+        left: 0vw;
+      }
+
+      .post-nav-prev-icon {
+        transform: translateX(8px);
+      }
+    }
+
+    &:active {
+      background-color: $main-purple;
+
+      &::before {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+
+  &-next {
+    flex-direction: row-reverse;
+
+    &::after {
+      @extend %circle-base;
+      right: -24vw;
+      background-color: $main-cambridge-blue;
+      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
+        right 400ms $ease-out-quart;
+    }
+
+    &:hover {
+      &::after {
+        right: 0vw;
+      }
+
+      .post-nav-next-icon {
+        transform: translateX(-8px);
+      }
+    }
+
+    &:active {
+      background-color: $main-cambridge-blue;
+
+      &::after {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+
+  &-prev-text,
+  &-next-text {
+    flex-grow: 1;
+    mix-blend-mode: difference;
+
+    .subtitle {
+      @include text-style(misc-sm);
+      margin-bottom: 4px;
+      opacity: 0.6;
+    }
+
+    .title {
+      @include text-style(heading-20);
+    }
+  }
+
+  &-prev-text {
+    @include column-flex(center, end);
+    margin-right: 24px;
+
+    .title {
+      text-align: end;
+    }
+  }
+
+  &-next-text {
+    @include column-flex(center, start);
+    margin-left: 16px;
+
+    .title {
+      text-align: start;
+    }
+  }
+
+  &-prev-icon,
+  &-next-icon {
+    @include flex;
+    flex-shrink: 1;
+
+    svg {
+      width: 30px;
+      height: 55px;
+      color: $lavender;
+    }
+  }
+
+  &-next-icon {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
