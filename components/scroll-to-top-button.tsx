@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useState } from 'react'
 
 import { LinkArrowIcon } from './icons'
@@ -8,21 +7,27 @@ const ScrollToTopButton = () => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    let observer: IntersectionObserver | undefined
+    let timeout: NodeJS.Timeout
 
-    if (!observer) {
-      observer = new IntersectionObserver(
-        ([entry]) => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
           setShow(!entry.isIntersecting)
-        },
-        { threshold: 0.9 }
-      )
-    }
+        }, 100) // 100ms 디바운싱 시간
+      },
+      { threshold: 0.9 }
+    )
 
     const nav = document.querySelector('.sidebar .sidebar-logo')
 
     if (nav) {
       observer.observe(nav)
+    }
+
+    return () => {
+      clearTimeout(timeout)
+      observer.disconnect()
     }
   }, [])
 
@@ -30,7 +35,7 @@ const ScrollToTopButton = () => {
     <button
       className="scroll-to-top-button"
       type="button"
-      onClick={() => window.scrollTo({ top: 0 })}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       style={{ display: show ? '' : 'none' }}
     >
       <LinkArrowIcon />
