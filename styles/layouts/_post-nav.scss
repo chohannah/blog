@@ -1,19 +1,31 @@
 %circle-base {
+  $circle-base-size: 120px;
+
   content: '';
   @include pos-center-y;
   flex-shrink: 0;
-  width: 120px;
-  height: 120px;
+  width: $circle-base-size;
+  height: $circle-base-size;
   border-radius: 50%;
   filter: $blur-48;
+
+  @include responsive(T) {
+    width: $circle-base-size * 2;
+    height: $circle-base-size * 2;
+  }
+
+  @include responsive(D) {
+    width: $circle-base-size * 3;
+    height: $circle-base-size * 3;
+  }
 }
 
 .post-nav {
   @include column-flex;
   background-color: $bg;
 
-  &-prev,
-  &-next {
+  &-next,
+  &-prev {
     @include flex;
     position: relative;
     padding: 0 16px;
@@ -24,41 +36,10 @@
       transform 350ms $ease-in-out-quart;
   }
 
-  &-prev {
-    flex-direction: row-reverse;
-
-    &::after {
-      @extend %circle-base;
-      right: -24vw;
-      background-color: $main-cambridge-blue;
-      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
-        right 400ms $ease-out-quart;
-    }
-
-    &:hover {
-      &::after {
-        right: 0vw;
-      }
-
-      .post-nav-prev-icon {
-        transform: translateX(-8px);
-      }
-    }
-
-    &:active {
-      background-color: $main-purple;
-
-      &::after {
-        width: 240px;
-        height: 240px;
-      }
-    }
-  }
-
   &-next {
     &::before {
       @extend %circle-base;
-      left: -24vw;
+      left: -28vw;
       background-color: $main-purple;
       transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
         left 400ms $ease-out-quart;
@@ -84,8 +65,39 @@
     }
   }
 
-  &-prev-text,
-  &-next-text {
+  &-prev {
+    flex-direction: row-reverse;
+
+    &::after {
+      @extend %circle-base;
+      right: -28vw;
+      background-color: $main-cambridge-blue;
+      transition: width 350ms $ease-in-quart, height 350ms $ease-in-quart,
+        right 400ms $ease-out-quart;
+    }
+
+    &:hover {
+      &::after {
+        right: 0vw;
+      }
+
+      .post-nav-prev-icon {
+        transform: translateX(-8px);
+      }
+    }
+
+    &:active {
+      background-color: $main-purple;
+
+      &::after {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+
+  &-next-text,
+  &-prev-text {
     flex-grow: 1;
     mix-blend-mode: difference;
 
@@ -100,15 +112,6 @@
     }
   }
 
-  &-prev-text {
-    @include column-flex(center, start);
-    margin-left: 16px;
-
-    .title {
-      text-align: start;
-    }
-  }
-
   &-next-text {
     @include column-flex(center, end);
     margin-right: 24px;
@@ -118,8 +121,17 @@
     }
   }
 
-  &-prev-icon,
-  &-next-icon {
+  &-prev-text {
+    @include column-flex(center, start);
+    margin-left: 16px;
+
+    .title {
+      text-align: start;
+    }
+  }
+
+  &-next-icon,
+  &-prev-icon {
     @include flex;
     flex-shrink: 1;
 
