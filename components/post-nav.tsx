@@ -12,22 +12,6 @@ export type PostNavProps = {
 const PostNav = ({ prevPost, nextPost }: PostNavProps) => {
   return (
     <nav className="post-nav">
-      {prevPost && (
-        <Link
-          href={`/blog/${prevPost.slug}`}
-          className="post-nav-prev"
-          aria-label={`Go to previous blog post: ${prevPost.title}`}
-        >
-          <p className="post-nav-prev-text">
-            <span className="subtitle">PREV</span>
-            <span className="title">{prevPost.title}</span>
-          </p>
-
-          <span className="post-nav-prev-icon">
-            <MDArrowIcon />
-          </span>
-        </Link>
-      )}
       {nextPost && (
         <Link
           href={`/blog/${nextPost.slug}`}
@@ -40,6 +24,22 @@ const PostNav = ({ prevPost, nextPost }: PostNavProps) => {
           </p>
 
           <span className="post-nav-next-icon">
+            <MDArrowIcon />
+          </span>
+        </Link>
+      )}
+      {prevPost && (
+        <Link
+          href={`/blog/${prevPost.slug}`}
+          className="post-nav-prev"
+          aria-label={`Go to previous blog post: ${prevPost.title}`}
+        >
+          <p className="post-nav-prev-text">
+            <span className="subtitle">PREV</span>
+            <span className="title">{prevPost.title}</span>
+          </p>
+
+          <span className="post-nav-prev-icon">
             <MDArrowIcon />
           </span>
         </Link>
