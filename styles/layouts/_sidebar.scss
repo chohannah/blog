@@ -1,11 +1,9 @@
 .sidebar {
   @include flex(between);
-
-  z-index: 108;
+  margin-bottom: 54px;
   width: 100%;
   height: $sidebar-height-sm;
-
-  margin-bottom: 54px;
+  z-index: 108;
   background-color: rgba($bg, 0.6);
   backdrop-filter: blur(10px);
 
