@@ -1,6 +1,6 @@
-%circle-base {
-  $circle-base-size: 120px;
+$circle-base-size: 120px;
 
+%circle-base {
   content: '';
   @include pos-center-y;
   flex-shrink: 0;
@@ -56,11 +56,11 @@
     }
 
     &:active {
-      background-color: $main-cambridge-blue;
+      background-color: $main-purple;
 
       &::before {
-        width: 240px;
-        height: 240px;
+        width: $circle-base-size * 2;
+        height: $circle-base-size * 2;
       }
     }
   }
@@ -87,11 +87,11 @@
     }
 
     &:active {
-      background-color: $main-purple;
+      background-color: $main-cambridge-blue;
 
       &::after {
-        width: 240px;
-        height: 240px;
+        width: $circle-base-size * 2;
+        height: $circle-base-size * 2;
       }
     }
   }
@@ -145,6 +145,86 @@
   &-prev-icon {
     svg {
       transform: rotate(180deg);
+    }
+  }
+
+  @include responsive(T) {
+    &-next {
+      &::before {
+        left: -22vw;
+      }
+
+      &:hover {
+        &::before {
+          left: -10vw;
+        }
+      }
+
+      &:active {
+        &::before {
+          width: $circle-base-size * 3;
+          height: $circle-base-size * 3;
+        }
+      }
+    }
+
+    &-prev {
+      &::after {
+        right: -24vw;
+      }
+
+      &:hover {
+        &::after {
+          right: -12vw;
+        }
+      }
+
+      &:active {
+        &::after {
+          width: $circle-base-size * 3;
+          height: $circle-base-size * 3;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-next {
+      &::before {
+        left: -16vw;
+      }
+
+      &:hover {
+        &::before {
+          left: -8vw;
+        }
+      }
+
+      &:active {
+        &::before {
+          width: $circle-base-size * 3;
+          height: $circle-base-size * 3;
+        }
+      }
+    }
+
+    &-prev {
+      &::after {
+        right: -18vw;
+      }
+
+      &:hover {
+        &::after {
+          right: -10vw;
+        }
+      }
+
+      &:active {
+        &::after {
+          width: $circle-base-size * 3;
+          height: $circle-base-size * 3;
+        }
+      }
     }
   }
 }
