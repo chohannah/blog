@@ -48,7 +48,7 @@ export default async function BlogPost({ params }: { params: any }) {
     notFound()
   }
 
-  const currentIndex = allBlogs.findIndex((p) => p.slug === params.slug)
+  const currentIndex = allBlogs.findIndex((post) => post.slug === params.slug)
   const prevPost = allBlogs[currentIndex - 1]
   const nextPost = allBlogs[currentIndex + 1]
 
