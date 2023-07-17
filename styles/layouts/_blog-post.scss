@@ -1,3 +1,9 @@
+$sidebar-logo-height: 58px;
+$sidebar-nav-height: 156px;
+$sidebar-links-height: 264.773px;
+$sidebar-tocs-margin-top-md: 43vw;
+$sidebar-tocs-margin-top-lg: 46.35vw;
+
 .blog-post {
   &-header {
     @extend %divider;
@@ -67,6 +73,8 @@
   }
 
   &-content {
+    margin-bottom: 108px;
+
     &-toc {
       &::after {
         @extend %divider;
@@ -155,16 +163,13 @@
   }
 
   @include responsive(T) {
-    $sidebar-logo-height: 58px;
-    $sidebar-nav-height: 156px;
-    $sidebar-links-height: 264.773px;
-    $sidebar-toc-margin-top: 108px;
-
     &-content {
       &-toc {
         position: absolute;
-        top: $sidebar-logo-height + $sidebar-nav-height + $sidebar-links-height +
-          $sidebar-toc-margin-top;
+        top: calc(
+          $sidebar-logo-height + $sidebar-nav-height + $sidebar-links-height +
+            $sidebar-tocs-margin-top-md
+        );
         left: calc($md-margin + ($gutter / 2));
         z-index: 108;
         width: calc(percentage(3 / $md-columns) - ($gutter * 2));
@@ -201,7 +206,7 @@
 
         .toc-title {
           @include text-style(subtitle);
-          margin-top: 160%;
+          margin-top: 0;
         }
 
         .toc-list-wrppaer {
@@ -214,11 +219,11 @@
   @include responsive(D) {
     &-content {
       &-toc {
+        top: calc(
+          $sidebar-logo-height + $sidebar-nav-height + $sidebar-links-height +
+            $sidebar-tocs-margin-top-lg
+        );
         left: calc((100vw - $lg-max-container) / 2);
-
-        .toc-title {
-          margin-top: 177%;
-        }
       }
     }
   }
