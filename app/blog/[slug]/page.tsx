@@ -61,18 +61,20 @@ export default async function BlogPost({ params }: { params: any }) {
 
         <p className="desc">{post.summary}</p>
 
-        <div className="post-image">
-          <Image
-            layout="responsive"
-            width={272}
-            height={204}
-            src={`${post.image}`}
-            alt={`${post.title}'s thumbnail image`}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
-            loading="lazy"
-          />
-        </div>
+        {post.image ? (
+          <div className="post-image">
+            <Image
+              layout="responsive"
+              width={272}
+              height={204}
+              src={`${post.image}`}
+              alt={`${post.title}'s thumbnail image`}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
+              loading="lazy"
+            />
+          </div>
+        ) : null}
 
         <div className="misc">
           <div className="misc-date">
