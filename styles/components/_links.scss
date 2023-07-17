@@ -6,7 +6,7 @@
   border-radius: 4px;
   border: 1px solid rgba($white, 0.6);
   background-color: rgba($ghost-white, 0.1);
-  backdrop-filter: blur(12px);
+  backdrop-filter: $background-blur-24;
 
   svg {
     position: relative;
