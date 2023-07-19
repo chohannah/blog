@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import { Post } from '../lib/types'
+import { Post } from '../../lib/types'
 
-import { MDArrowIcon } from './icons'
+import { MDArrowIcon } from '../modules/icons'
 
 export type PostNavProps = {
   prevPost: Pick<Post, 'title' | 'slug'> | null

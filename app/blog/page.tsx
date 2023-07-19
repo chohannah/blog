@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { allBlogs } from '@/root/.contentlayer/generated'
 
-import { CalendarIcon, ClockIcon } from '@/root/components/icons'
-import Tag from '@/root/components/tag'
+import { CalendarIcon, ClockIcon } from '@/root/components/modules/icons'
+import Tag from '@/root/components/modules/tag'
 
 export const metadata: Metadata = {
   title: 'blog | joyejin',

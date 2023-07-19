@@ -3,9 +3,9 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
 
-import { siteConfig } from '../config'
+import { siteConfig } from '../../config'
 
-import LinkGhostArrow from './link-ghost-arrow'
+import LinkGhostArrow from '../modules/link-ghost-arrow'
 
 const Footer = () => {
   const currentYear = useMemo(() => new Date().getFullYear(), [])

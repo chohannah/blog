@@ -8,8 +8,8 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { LayoutGroup, motion } from 'framer-motion'
 
-import LinkGhostArrow from './link-ghost-arrow'
-import { siteConfig } from '../config'
+import LinkGhostArrow from '../modules/link-ghost-arrow'
+import { siteConfig } from '../../config'
 
 export default function Sidebar() {
   let pathname = usePathname() || '/'

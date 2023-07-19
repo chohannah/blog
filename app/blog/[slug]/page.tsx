@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { allBlogs } from '@/root/.contentlayer/generated'
-import { MdxRenderer } from '@/root/components/blog-post-content'
+import { MdxRenderer } from '@/root/components/mdx/blog-post-content'
 import Balancer from 'react-wrap-balancer'
 
-import { CalendarIcon, ClockIcon } from '@/root/components/icons'
-import Tag from '@/root/components/tag'
-import PostNav from '@/root/components/post-nav'
-import ScrollToTopButton from '@/root/components/scroll-to-top-button'
+import { CalendarIcon, ClockIcon } from '@/root/components/modules/icons'
+import Tag from '@/root/components/modules/tag'
+import PostNav from '@/root/components/layouts/post-nav'
+import ScrollToTopButton from '@/root/components/modules/scroll-to-top-button'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({

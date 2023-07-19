@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import tocbot from 'tocbot'
 
-const TocPost = () => {
+const Toc = () => {
   const [shouldAdjustTocHeight, setShouldAdjustTocHeight] = useState(false)
 
   useEffect(() => {
@@ -62,4 +62,4 @@ const TocPost = () => {
   )
 }
 
-export default TocPost
+export default Toc

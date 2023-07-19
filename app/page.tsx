@@ -1,5 +1,5 @@
-import { homeName, homeTitle, homeBody } from '../lib/page-content'
-import LinkOutlinedArrow from '../components/link-outlined-arrow'
+import { homeTitle, homeBody } from '../lib/page-content'
+import LinkOutlinedArrow from '../components/modules/link-outlined-arrow'
 
 const HomePage = () => {
   return (

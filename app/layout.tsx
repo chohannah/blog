@@ -3,9 +3,9 @@ import { Cormorant_Garamond } from 'next/font/google'
 import { Fira_Code } from 'next/font/google'
 
 import { siteConfig } from '../config'
-import Sidebar from '../components/sidebar'
-import Footer from '../components/footer'
-import Content from '../components/content'
+import Sidebar from '../components/layouts/sidebar'
+import Footer from '../components/layouts/footer'
+import Content from '../components/layouts/content'
 
 import '../styles/index.scss'
 
