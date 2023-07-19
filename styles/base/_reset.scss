@@ -7,6 +7,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  color: $ghost-white;
+  background-color: $purple-dark;
+}
+
 html {
   font-family: $font-main;
   font-size: 16px;
