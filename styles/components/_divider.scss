@@ -1,18 +1,38 @@
 %divider {
-  &:after {
+  &::after {
     content: url(../../public/images/divider.svg);
     @include flex;
-    margin: 54px 0;
+    margin: $divider-margin-top-bottom-sm 0;
     padding: 8px 0;
+  }
+
+  @include responsive(T) {
+    &::after {
+      margin: $divider-margin-top-bottom-md 0;
+    }
+  }
+
+  @include responsive(D) {
+    &::after {
+      margin: $divider-margin-top-bottom-lg 0;
+    }
   }
 }
 
 %divider-hr {
   @include flex;
-  margin: 54px 0;
+  margin: $divider-margin-top-bottom-sm 0;
   padding: 8px 0;
   background-image: url(../../public/images/divider.svg);
   background-repeat: no-repeat;
   background-position: center;
   border: none;
+
+  @include responsive(T) {
+    margin: $divider-margin-top-bottom-md 0;
+  }
+
+  @include responsive(D) {
+    margin: $divider-margin-top-bottom-lg 0;
+  }
 }
