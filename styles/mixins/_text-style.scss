@@ -51,6 +51,22 @@
   letter-spacing: $letter-spacing-body;
 }
 
+@mixin blog-content-heading-12() {
+  font-family: $font-family-blog-content-heading;
+  font-weight: $font-weight-heading;
+  font-size: $font-size-heading-12;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
+@mixin blog-content-heading-14() {
+  font-family: $font-family-blog-content-heading;
+  font-weight: $font-weight-heading;
+  font-size: $font-size-heading-14;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
 @mixin blog-content-heading-20() {
   font-family: $font-family-blog-content-heading;
   font-weight: $font-weight-heading;
@@ -120,6 +136,12 @@
   }
   @if ($type == 'body') {
     @include body;
+  }
+  @if ($type == 'blog-content-heading-12') {
+    @include blog-content-heading-12;
+  }
+  @if ($type == 'blog-content-heading-14') {
+    @include blog-content-heading-14;
   }
   @if ($type == 'blog-content-heading-20') {
     @include blog-content-heading-20;
