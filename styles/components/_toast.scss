@@ -1,0 +1,18 @@
+.toast {
+  padding: 12px;
+  border-radius: 4px;
+  backdrop-filter: $blur-16;
+  // Toast props takes over background-color, border
+
+  //icon
+  .go2358747891 {
+    @include text-style(subtitle);
+    margin-right: 8px;
+  }
+
+  //text
+  .go3958317564 {
+    @include text-style(button);
+    margin: 4px 12px 4px 4px;
+  }
+}
