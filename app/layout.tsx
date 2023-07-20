@@ -20,7 +20,7 @@ const cormorant_garamond = Cormorant_Garamond({
 })
 
 const fira_code = Fira_Code({
-  weight: ['300', '600'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-fira-code',
   display: 'swap',
