@@ -38,10 +38,8 @@
           margin-bottom: 16px;
 
           sup {
+            @include text-style(blog-content-heading-12);
             margin-right: 4px;
-            font-weight: 700;
-            font-size: 10px;
-            line-height: 1.2;
             color: rgba($ghost-white, 0.6);
           }
         }
