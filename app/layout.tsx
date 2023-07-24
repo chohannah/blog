@@ -20,9 +20,11 @@ export const metadata: Metadata = {
 }
 
 // toast styles constants
-const mainCoral = '240, 128, 128' // #fa825b
-const wintergreen = '42, 187, 155' // #4b8178
-const ghostWhite = '#f0eff4'
+const mainCoralRgb = '240, 128, 128'
+const mainCoralHex = '#fa825b'
+const wintergreenRgb = '42, 187, 155'
+const wintergreenHex = '#4b8178'
+const ghostWhiteHex = '#f0eff4'
 
 export default function RootLayout({
   children,
@@ -45,16 +47,16 @@ export default function RootLayout({
                 className: 'toast',
                 success: {
                   style: {
-                    border: `1px solid ${wintergreen}`,
-                    backgroundColor: `rgba(${wintergreen}, 0.4)`,
-                    color: ghostWhite,
+                    border: `1px solid ${wintergreenHex}`,
+                    backgroundColor: `rgba(${wintergreenRgb}, 0.4)`,
+                    color: ghostWhiteHex,
                   },
                 },
                 error: {
                   style: {
-                    border: `1px solid ${mainCoral}`,
-                    backgroundColor: `rgba(${mainCoral}, 0.4)`,
-                    color: ghostWhite,
+                    border: `1px solid ${mainCoralHex}`,
+                    backgroundColor: `rgba(${mainCoralRgb}, 0.4)`,
+                    color: ghostWhiteHex,
                   },
                 },
               }}
