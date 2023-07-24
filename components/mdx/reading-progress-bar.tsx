@@ -9,7 +9,7 @@ const ReadingProgressBar = () => {
     const element = document.documentElement
     const ScrollTop = element.scrollTop || document.body.scrollTop
     const ScrollHeight = element.scrollHeight || document.body.scrollHeight
-    const ClientHeight = element.clientHeight
+    const ClientHeight = element.clientHeight || document.body.clientHeight
     const percent = (ScrollTop / (ScrollHeight - ClientHeight)) * 100
 
     setWidth(percent)
