@@ -9,6 +9,7 @@ import { CalendarIcon, ClockIcon } from '@/root/components/modules/icons'
 import Tag from '@/root/components/modules/tag'
 import PostNav from '@/root/components/layouts/post-nav'
 import ScrollToTopButton from '@/root/components/modules/scroll-to-top-button'
+import ReadingProgressBar from '@/root/components/mdx/reading-progress-bar'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -54,6 +55,8 @@ export default async function BlogPost({ params }: { params: any }) {
 
   return (
     <section className="blog-post">
+      <ReadingProgressBar />
+
       <article className="blog-post-header">
         <h1 className="title">
           <Balancer>{post.title}</Balancer>
