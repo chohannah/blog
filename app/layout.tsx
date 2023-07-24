@@ -1,30 +1,15 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond } from 'next/font/google'
-import { Fira_Code } from 'next/font/google'
 import { AppProps } from 'next/app'
 
 import { Toaster } from 'react-hot-toast'
 
 import { siteConfig } from '../config'
+import { cormorant_garamond, fira_code } from '../lib/fonts'
 import Sidebar from '../components/layouts/sidebar'
 import Footer from '../components/layouts/footer'
 import Content from '../components/layouts/content'
 
 import '../styles/index.scss'
-
-const cormorant_garamond = Cormorant_Garamond({
-  weight: ['300', '600'],
-  subsets: ['latin'],
-  variable: '--font-cormorant-garamond',
-  display: 'swap',
-})
-
-const fira_code = Fira_Code({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--font-fira-code',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: {
