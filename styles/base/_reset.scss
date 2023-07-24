@@ -65,3 +65,18 @@ ol {
 address {
   font-style: none;
 }
+
+progress {
+  background-color: transparent;
+
+  &::-webkit-progress-inner-element,
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  /* Firefox */
+  &::-moz-progress-bar,
+  &::-moz-progress-value {
+    background-color: transparent;
+  }
+}
