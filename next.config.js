@@ -4,12 +4,14 @@ const { withContentlayer } = require('next-contentlayer')
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
     default-src 'self' vercel.live;
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
-    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live giscus.app;
+    style-src 'self' 'unsafe-inline' giscus.app;
+    style-src-elem 'self' 'unsafe-inline' giscus.app;
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
     font-src 'self';
+    frame-src 'self' giscus.app;
 `
 
 const securityHeaders = [
@@ -44,10 +46,10 @@ const securityHeaders = [
     value: 'max-age=31536000; includeSubDomains; preload',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
-  },
+  // {
+  //   key: 'Permissions-Policy',
+  //   value: 'camera=(), microphone=(), geolocation=()',
+  // },
 ]
 
 /** @type {import('next').NextConfig} */
