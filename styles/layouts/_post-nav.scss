@@ -22,6 +22,7 @@ $circle-base-size: 120px;
 
 .post-nav {
   @include column-flex;
+  margin-bottom: 54px;
   background-color: $bg;
 
   &-next,
@@ -149,6 +150,8 @@ $circle-base-size: 120px;
   }
 
   @include responsive(T) {
+    margin-bottom: 72px;
+
     &-next {
       &::before {
         left: -22vw;
@@ -189,6 +192,8 @@ $circle-base-size: 120px;
   }
 
   @include responsive(D) {
+    margin-bottom: 108px;
+
     &-next {
       &::before {
         left: -16vw;
