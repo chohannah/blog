@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'yejin cho',
-  template: '%s | yejinc',
+  template: '%s | joyejin',
   title: 'joyejin',
   description: 'tech | mindfulness | design',
   email: 'hey.yejinc@gmail.com',
