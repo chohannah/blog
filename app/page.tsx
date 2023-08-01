@@ -1,17 +1,67 @@
-import { homeTitle, homeBody } from '../lib/page-content'
+'use client'
+
+import { motion } from 'framer-motion'
+import { fadeInHalf, staggerHalf } from '../constants/animations'
+import Balancer from 'react-wrap-balancer'
+
+import { homeBody } from '../lib/page-content'
 import LinkOutlinedArrow from '../components/modules/link-outlined-arrow'
 
-const HomePage = () => {
+const WavingHand = () => (
+  <motion.div
+    style={{
+      display: 'inline-block',
+      top: '6px',
+      left: '-2px',
+    }}
+    animate={{ rotate: 20 }}
+    transition={{
+      repeat: 7,
+      repeatType: 'mirror',
+      duration: 0.4,
+      delay: 0.8,
+      ease: 'easeInOut',
+      type: 'tween',
+    }}
+  >
+    👋
+  </motion.div>
+)
+
+export default function HomePage() {
   return (
-    <section className="home">
+    <motion.section
+      className="home"
+      variants={staggerHalf}
+      initial="initial"
+      animate="animate"
+    >
       <div className="home-text">
-        <h2 className="home-title">{homeTitle}</h2>
-        {homeBody()}
+        <motion.h2 className="home-title" variants={fadeInHalf}>
+          <Balancer ratio={0.4}>
+            Nice virtually meeting you <WavingHand />
+          </Balancer>
+        </motion.h2>
+
+        <motion.div className="home-content" variants={fadeInHalf}>
+          {' '}
+          <p>
+            A Software Engineer(Frontend) strives to make intuitive, aesthetic,
+            and inclusive products.
+          </p>
+          <p>
+            Currently going through Senior year of Computer Science major and
+            looking for opportunities.
+          </p>
+          <p>Previously a User Experience Designer.</p>
+        </motion.div>
       </div>
 
-      <LinkOutlinedArrow href="/about">more about me</LinkOutlinedArrow>
-    </section>
+      <motion.button variants={fadeInHalf} type="button">
+        <LinkOutlinedArrow href="/about" aria-label="Go to about page">
+          more about me
+        </LinkOutlinedArrow>
+      </motion.button>
+    </motion.section>
   )
 }
-
-export default HomePage
