@@ -1,15 +1,13 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+
 import { notFound } from 'next/navigation'
 import { allBlogs } from '@/root/.contentlayer/generated'
 import { MdxRenderer } from '@/root/components/mdx/blog-post-content'
-import Balancer from 'react-wrap-balancer'
 
-import { CalendarIcon, ClockIcon } from '@/root/components/modules/icons'
-import Tag from '@/root/components/modules/tag'
 import PostNav from '@/root/components/layouts/post-nav'
 import ScrollToTopButton from '@/root/components/modules/scroll-to-top-button'
 import ReadingProgressBar from '@/root/components/mdx/reading-progress-bar'
+import BlogPostHeader from '@/root/components/mdx/blog-post-header'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -54,59 +52,23 @@ export default async function BlogPost({ params }: { params: any }) {
   const nextPost = allBlogs[currentIndex + 1]
 
   return (
-    <section className="blog-post">
+    <section className="blog-post transition-fade">
       <ReadingProgressBar />
 
-      <article className="blog-post-header">
-        <h1 className="title">
-          <Balancer>{post.title}</Balancer>
-        </h1>
-
-        <p className="desc">{post.summary}</p>
-
-        {post.image ? (
-          <div className="post-image">
-            <Image
-              layout="responsive"
-              width={272}
-              height={204}
-              src={`${post.image}`}
-              alt={`${post.title}'s thumbnail image`}
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
-              loading="lazy"
-            />
-          </div>
-        ) : null}
-
-        <div className="misc">
-          <div className="misc-date">
-            <span className="icon-wrapper">
-              <CalendarIcon />
-            </span>
-            <time className="date" dateTime={post.date}>
-              {post.date.slice(0, 10)}
-            </time>
-          </div>
-
-          <div className="misc-reading-time">
-            <span className="icon-wrapper">
-              <ClockIcon />
-            </span>
-            <p className="reading-time">{post.readingMinutes} min.</p>
-          </div>
-        </div>
-
-        <ul className="tags-list">
-          {post.tags && post.tags.map((tag, i) => <Tag key={i} tag={tag} />)}
-        </ul>
-      </article>
-
-      <ScrollToTopButton />
+      <BlogPostHeader
+        title={post.title}
+        summary={post.summary}
+        image={post.image}
+        date={post.date}
+        tags={post.tags}
+        readingMinutes={post.readingMinutes}
+      />
 
       <MdxRenderer code={post.body.code} />
 
       <PostNav prevPost={prevPost} nextPost={nextPost} />
+
+      <ScrollToTopButton />
     </section>
   )
 }
