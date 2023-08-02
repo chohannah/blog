@@ -16,10 +16,16 @@
       margin-bottom: 48px;
       border-radius: 4px;
       background-color: $bg-card;
-      transition: opacity 200ms ease-in-out;
+      opacity: 0.9;
+      border: 1px solid transparent;
+      transition: opacity 200ms $ease-in-out-quart,
+        border 200ms $ease-in-out-quart;
 
-      &:hover {
-        opacity: 60%;
+      &:hover,
+      &:focus {
+        opacity: 1;
+        border: 1px solid $border;
+        outline: none;
       }
     }
 
