@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast'
 
 import { siteConfig } from '../config'
 
+import SkipTopMainContentButton from '../components/modules/skip-to-main-content-button'
 import Sidebar from '../components/layouts/sidebar'
 import Footer from '../components/layouts/footer'
 import Content from '../components/layouts/content'
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <div className="container">
           <div className="row">
+            <SkipTopMainContentButton />
             <Sidebar />
             <Content>{children}</Content>
             <Footer />
