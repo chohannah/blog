@@ -1,0 +1,30 @@
+.skip-to-main-content-button {
+  position: absolute;
+  top: 80px;
+  left: -10000000px;
+  padding: $spacing-r-16;
+  z-index: 120;
+  text-decoration: underline;
+  text-decoration-color: $grey-5;
+  outline: 1px solid $purple-light;
+  border-radius: $radius-4;
+  background-color: $bg-badge;
+
+  &:focus {
+    left: $spacing-p-16;
+  }
+
+  @include responsive(T) {
+    top: $spacing-p-24;
+
+    &:focus {
+      left: $spacing-p-24;
+    }
+  }
+
+  @include responsive(D) {
+    &:focus {
+      left: $spacing-p-48;
+    }
+  }
+}
