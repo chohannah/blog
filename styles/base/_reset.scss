@@ -14,7 +14,7 @@
 
 html {
   font-family: $font-main;
-  font-size: $spacing-r-16;
+  font-size: $font-size-p-15;
   background-color: $bg;
 }
 
@@ -79,5 +79,17 @@ progress {
   &::-moz-progress-bar,
   &::-moz-progress-value {
     background-color: transparent;
+  }
+}
+
+@include responsive(T) {
+  html {
+    font-size: $font-size-p-16;
+  }
+}
+
+@include responsive(T) {
+  html {
+    font-size: $font-size-p-18;
   }
 }
