@@ -139,16 +139,6 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
         &:hover {
           opacity: 0.6;
         }
-
-        .icon.icon-link {
-          @include flex;
-          width: 16px;
-          height: 16px;
-          background-image: url(../../public/icons/hashtag.svg);
-          background-repeat: no-repeat;
-          background-position: center;
-          object-fit: cover;
-        }
       }
     }
 
@@ -219,6 +209,10 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
     ul {
       list-style: disc;
+
+      &:first-child {
+        list-style: none;
+      }
 
       li {
         display: list-item;
@@ -473,6 +467,26 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
     }
 
     &-content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        .anchor {
+          .icon.icon-link {
+            @include flex;
+            width: 16px;
+            height: 16px;
+            z-index: 108;
+            background-image: url(../../public/icons/hashtag.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            object-fit: cover;
+          }
+        }
+      }
+
       &-toc {
         position: absolute;
         top: calc(
