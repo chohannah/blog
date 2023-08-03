@@ -1,46 +1,64 @@
+// font-families
 $font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 $font-heading: var(--font-cormorant-garamond);
 $font-mono: var(--font-fira-code);
+
+// font-weights
 $font-weight-main: 300;
 $font-weight-bold: 600;
 $font-weight-misc-main: 400;
 $font-weight-misc-bold: 700;
 
+// font-sizes
+// rems
+$font-size-r-12: 0.75rem;
+$font-size-r-14: 0.875rem;
+$font-size-r-16: 1rem;
+$font-size-r-20: 1.25rem;
+$font-size-r-24: 1.5rem;
+$font-size-r-32: 2rem;
+
+// pxs
+$font-size-p-15: 15px;
+$font-size-p-16: 16px;
+$font-size-p-18: 18px;
+
+// fonts
 $font-family-misc-12: $font-mono;
-$font-size-misc-12: $spacing-r-12;
+$font-size-misc-12: $font-size-r-12;
 $line-height-misc-12: 1.2;
 $letter-spacing-misc-12: -0.01em;
 
 $font-family-misc-14: $font-mono;
-$font-size-misc-14: $spacing-r-14;
+$font-size-misc-14: $font-size-r-14;
 $line-height-misc-14: 1.2;
 $letter-spacing-misc-14: -0.02em;
 
 $font-family-desc: $font-main;
-$font-size-desc: $spacing-r-14;
+$font-size-desc: $font-size-r-14;
 $line-height-desc: 1.2;
 $letter-spacing-desc: 0.01em;
 
 $font-family-link: $font-heading;
-$font-size-link: $spacing-r-14;
+$font-size-link: $font-size-r-14;
 $line-height-link: 1.2;
 $letter-spacing-link: 0.01em;
 
 $font-family-subtitle: $font-main;
 $font-weight-subtitle: $font-weight-bold;
-$font-size-subtitle: $spacing-r-16;
+$font-size-subtitle: $font-size-r-16;
 $line-height-subtitle: 1.2;
 $letter-spacing-subtitle: 0.01em;
 
 $font-family-button: $font-heading;
 $font-weight-button: $font-weight-bold;
-$font-size-button: $spacing-r-16;
+$font-size-button: $font-size-r-16;
 $line-height-button: 1.2;
 $letter-spacing-button: normal;
 
 $font-family-body: $font-main;
-$font-size-body: $spacing-r-16;
+$font-size-body: $font-size-r-16;
 $font-weight-body: $font-weight-main;
 $line-height-body: 1.5;
 $letter-spacing-body: -0.01em;
@@ -49,10 +67,10 @@ $font-family-heading: $font-heading;
 $font-family-blog-content-heading: $font-main;
 
 $font-weight-heading: $font-weight-bold;
-$font-size-heading-12: $spacing-r-12;
-$font-size-heading-14: $spacing-r-14;
-$font-size-heading-20: $spacing-r-20;
-$font-size-heading-24: $spacing-r-24;
-$font-size-heading-32: $spacing-r-32;
+$font-size-heading-12: $font-size-r-12;
+$font-size-heading-14: $font-size-r-14;
+$font-size-heading-20: $font-size-r-20;
+$font-size-heading-24: $font-size-r-24;
+$font-size-heading-32: $font-size-r-32;
 $line-height-heading: 1.2;
 $letter-spacing-heading: normal;
