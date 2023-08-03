@@ -8,39 +8,39 @@ $font-weight-misc-main: 400;
 $font-weight-misc-bold: 700;
 
 $font-family-misc-12: $font-mono;
-$font-size-misc-12: 12px;
+$font-size-misc-12: $spacing-r-12;
 $line-height-misc-12: 1.2;
 $letter-spacing-misc-12: -0.01em;
 
 $font-family-misc-14: $font-mono;
-$font-size-misc-14: 14px;
+$font-size-misc-14: $spacing-r-14;
 $line-height-misc-14: 1.2;
 $letter-spacing-misc-14: -0.02em;
 
 $font-family-desc: $font-main;
-$font-size-desc: 14px;
+$font-size-desc: $spacing-r-14;
 $line-height-desc: 1.2;
 $letter-spacing-desc: 0.01em;
 
 $font-family-link: $font-heading;
-$font-size-link: 14px;
+$font-size-link: $spacing-r-14;
 $line-height-link: 1.2;
 $letter-spacing-link: 0.01em;
 
 $font-family-subtitle: $font-main;
 $font-weight-subtitle: $font-weight-bold;
-$font-size-subtitle: 16px;
+$font-size-subtitle: $spacing-r-16;
 $line-height-subtitle: 1.2;
 $letter-spacing-subtitle: 0.01em;
 
 $font-family-button: $font-heading;
 $font-weight-button: $font-weight-bold;
-$font-size-button: 16px;
+$font-size-button: $spacing-r-16;
 $line-height-button: 1.2;
 $letter-spacing-button: normal;
 
 $font-family-body: $font-main;
-$font-size-body: 16px;
+$font-size-body: $spacing-r-16;
 $font-weight-body: $font-weight-main;
 $line-height-body: 1.5;
 $letter-spacing-body: -0.01em;
@@ -49,10 +49,10 @@ $font-family-heading: $font-heading;
 $font-family-blog-content-heading: $font-main;
 
 $font-weight-heading: $font-weight-bold;
-$font-size-heading-12: 12px;
-$font-size-heading-14: 14px;
-$font-size-heading-20: 20px;
-$font-size-heading-24: 24px;
-$font-size-heading-32: 32px;
+$font-size-heading-12: $spacing-r-12;
+$font-size-heading-14: $spacing-r-14;
+$font-size-heading-20: $spacing-r-20;
+$font-size-heading-24: $spacing-r-24;
+$font-size-heading-32: $spacing-r-32;
 $line-height-heading: 1.2;
 $letter-spacing-heading: normal;
