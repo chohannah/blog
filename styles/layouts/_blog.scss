@@ -8,24 +8,22 @@
 
   &-list-post {
     width: 100%;
-    background-color: $bg-card;
 
     &-wrapper {
       @include column-flex;
       padding: $spacing-r-16;
       margin-bottom: $spacing-r-48;
-      border-radius: $radius-4;
-      border-radius: $radius-4;
-      background-color: $bg-card;
       opacity: 0.9;
-      border: 1px solid transparent;
+      border-radius: $radius-4;
+      border: 1px solid $border;
+      background-color: transparent;
       transition: opacity 200ms $ease-in-out-quart,
-        border 200ms $ease-in-out-quart;
+        background-color 200ms $ease-in-out-quart;
 
       &:hover,
       &:focus {
         opacity: 1;
-        border: 1px solid $border;
+        background-color: $bg-card;
         outline: none;
       }
     }
