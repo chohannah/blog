@@ -115,18 +115,33 @@
     }
   }
 
-  @include responsive(T) {
+  @include responsive(TL) {
     &-list-post {
       @include flex(start);
       flex-wrap: nowrap;
 
+      &-wrapper {
+        padding: $spacing-r-16 $spacing-r-24;
+      }
+
       .post-image {
         @include inline-flex;
         margin: 0 $spacing-r-16 0 0;
-        min-width: 208px;
-        max-width: 348px;
-        min-height: 156px;
-        max-height: 261px;
+        min-width: 27vw;
+        min-height: 20vw;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-list-post {
+      &-wrapper {
+        padding: $spacing-r-24 $spacing-r-36;
+      }
+
+      .post-image {
+        min-width: 348px;
+        min-height: 261px;
       }
     }
   }
