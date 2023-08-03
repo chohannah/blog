@@ -1,4 +1,8 @@
 .content {
+  &:focus {
+    outline: none;
+  }
+
   @include responsive(T) {
     padding: $vertial-padding-from-md 0;
   }
