@@ -1,15 +1,17 @@
 .home {
   &-title {
-    @include text-style(heading-32);
-    margin-bottom: 16px;
+    span {
+      @include text-style(heading-32);
+      margin-bottom: $spacing-r-36;
+    }
   }
 
   p {
     @include text-style(body);
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-r-16;
 
     &:last-child {
-      margin-bottom: 48px;
+      margin-bottom: $spacing-r-48;
     }
   }
 }

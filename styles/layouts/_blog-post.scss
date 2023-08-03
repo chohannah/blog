@@ -18,14 +18,14 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
     .desc {
       @include text-style(desc);
-      margin-bottom: 16px;
+      margin-bottom: $spacing-r-16;
     }
 
     .post-image {
       @include flex;
       position: relative;
-      padding: 16px 0;
-      margin-bottom: 16px;
+      padding: $spacing-r-16 0;
+      margin-bottom: $spacing-r-16;
       // width: calc(100vw - ($gutter + $sm-margin * 2));
       // height: calc((100vw - ($gutter + $sm-margin * 2)) * 0.75);
       overflow: hidden;
@@ -41,7 +41,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
       .misc {
         @include flex(start);
-        margin-bottom: 16px;
+        margin-bottom: $spacing-r-16;
 
         &-date,
         &-reading-time {
@@ -49,8 +49,8 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
           .icon-wrapper {
             @include inline-flex;
-            margin-right: 4px;
-            padding: 2px;
+            margin-right: $spacing-r-4;
+            padding: $spacing-r-2;
 
             svg {
               width: 100%;
@@ -60,7 +60,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
         }
 
         &-date {
-          margin-right: 8px;
+          margin-right: $spacing-r-8;
 
           .date {
             @include text-style(misc-12);
@@ -87,7 +87,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
   }
 
   &-content {
-    margin-bottom: 108px;
+    margin-bottom: $spacing-r-108;
 
     &-toc {
       &::after {
@@ -95,19 +95,19 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       }
 
       &-wrapper {
-        margin-left: 24px;
+        margin-left: $spacing-r-24;
       }
 
       .toc-title {
         @include text-style(blog-content-heading-24);
-        margin-bottom: 16px;
+        margin-bottom: $spacing-r-16;
       }
 
       .toc-list {
         &-item {
           // h2, h3
           .toc-list {
-            margin-left: 8px;
+            margin-left: $spacing-r-8;
           }
 
           .toc-link {
@@ -154,39 +154,39 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
     h1 {
       @include text-style(blog-content-heading-24, $white);
-      padding: 48px 0 24px;
+      margin: $spacing-r-48 0 $spacing-r-24;
     }
 
     h2 {
       @include text-style(blog-content-heading-20, $white);
-      padding: 36px 0 16px;
+      margin: $spacing-r-36 0 $spacing-r-16;
     }
 
     h3 {
       @include text-style(subtitle, $white);
-      padding: 24px 0 12px;
+      margin: $spacing-r-24 0 $spacing-r-12;
     }
 
     h4 {
       @include text-style(blog-content-heading-14, $white);
-      padding: 16px 0 8px;
+      margin: $spacing-r-16 0 $spacing-r-8;
     }
 
     h5 {
       @include text-style(blog-content-heading-12, $white);
-      padding: 12px 0 4px;
+      margin: $spacing-r-12 0 $spacing-r-4;
     }
 
     h6 {
       @include text-style(blog-content-heading-12, $white);
-      padding: 8px 0 2px;
+      margin: $spacing-r-8 0 $spacing-r-2;
     }
 
     // lists
     ol,
     ul {
-      margin: 36px 0;
-      padding-left: 24px;
+      margin: $spacing-r-36 0;
+      padding-left: $spacing-r-24;
 
       li {
         @include text-style(body);
@@ -197,8 +197,8 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
         }
 
         ul {
-          margin: 12px 0;
-          padding-left: 12px;
+          margin: $spacing-r-12 0;
+          padding-left: $spacing-r-12;
         }
       }
     }
@@ -207,7 +207,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       list-style: decimal;
 
       li {
-        margin: 16px 0;
+        margin: $spacing-r-16 0;
 
         &::marker {
           @include text-style(blog-content-heading-12);
@@ -222,14 +222,14 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
       li {
         display: list-item;
-        margin: 12px 0;
+        margin: $spacing-r-12 0;
       }
     }
 
     // texts
     p {
       @include text-style(body);
-      margin: 16px 0;
+      margin: $spacing-r-16 0;
 
       strong {
         color: $white;
@@ -262,10 +262,10 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       // inline code
       code {
         @include text-style(misc-14);
-        padding: 2px 4px;
+        padding: $spacing-r-2 $spacing-r-4;
         font-weight: $font-weight-bold;
         border: 1px solid $border;
-        border-radius: 4px;
+        border-radius: $radius-4;
         background-color: rgba($bg-card, 0.6);
 
         &::before,
@@ -277,7 +277,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       // image
       img {
         @include flex;
-        margin: 54px 0;
+        margin: $spacing-r-54 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -286,23 +286,23 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
     blockquote {
       @include text-style(body, $white);
-      margin: 48px 0;
-      padding-left: 16px;
+      margin: $spacing-r-48 0;
+      padding-left: $spacing-r-16;
       border-left: 4px solid $border;
     }
 
     // code block
     [data-rehype-pretty-code-fragment] {
-      margin: 48px 0;
+      margin: $spacing-r-48 0;
       border: 1px solid $border;
-      border-radius: 4px;
+      border-radius: $radius-4;
       background-color: $bg-badge;
       overflow: hidden;
 
       [data-rehype-pretty-code-title] {
         @include inline-flex;
         @include text-style(desc);
-        padding: 12px;
+        padding: $spacing-r-12;
         border-bottom: 4px solid $grey-1;
         background-color: $bg-card;
       }
@@ -320,9 +320,8 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       }
 
       .code {
-        padding-bottom: 24px;
-        padding: 16px 24px;
-        border-radius: 4px;
+        padding: $spacing-r-16 $spacing-r-24 $spacing-r-24;
+        border-radius: $radius-4;
         background-color: $bg-card;
         overflow-x: scroll;
         -ms-overflow-style: none; /* Edge */
@@ -336,9 +335,9 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
           .line {
             &.line--highlighted {
               position: relative;
-              margin-left: -24px;
-              margin-right: 24px;
-              padding: 0 24px;
+              margin-left: -#{$spacing-r-24};
+              margin-right: $spacing-r-24;
+              padding: 0 $spacing-r-24;
               border-left: 6px solid $sunflower;
               background-color: $bg-badge;
             }
@@ -356,8 +355,8 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
         position: absolute;
         bottom: 8px;
         right: 8px;
-        padding: 8px;
-        border-radius: 4px;
+        padding: $spacing-r-8;
+        border-radius: $radius-4;
         background-color: rgba($bg-badge, 0.2);
         backdrop-filter: $blur-4;
         transition: opacity 300ms $ease-in-out-quart;
@@ -374,7 +373,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 48px;
+      margin-bottom: $spacing-r-48;
 
       thead {
         border-bottom: 2px solid $grey-1;
@@ -404,15 +403,15 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
           &:not(:first-child),
           &:not(:last-child) {
-            padding: 2px 8px 8px 8px;
+            padding: $spacing-r-2 $spacing-r-8 $spacing-r-8 $spacing-r-8;
           }
 
           &:first-child {
-            padding: 2px 8px 8px 2px;
+            padding: $spacing-r-2 $spacing-r-8 $spacing-r-8 $spacing-r-2;
           }
 
           &:last-child {
-            padding: 2px 2px 8px 8px;
+            padding: $spacing-r-2 $spacing-r-2 $spacing-r-8 $spacing-r-8;
           }
 
           &[align='right'] {
@@ -438,8 +437,8 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       }
 
       .post-image {
-        padding: 24px 0;
-        margin-bottom: 16px;
+        padding: $spacing-r-24 0;
+        margin-bottom: $spacing-r-16;
 
         img {
           border-radius: $radius-8;
@@ -452,10 +451,10 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
 
         .misc {
           margin-bottom: 0;
-          margin-right: 36px;
+          margin-right: $spacing-r-36;
 
           &-date {
-            margin-right: 12px;
+            margin-right: $spacing-r-12;
 
             .icon-wrapper {
               width: 22px;
@@ -502,12 +501,12 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
             &.is-active-li {
               .toc-link {
                 border-bottom: 1px solid rgba($ghost-white, 0.6);
-                padding-bottom: 0.4px;
+                padding-bottom: 0.025rem;
 
                 &.is-active-link {
                   color: $purple-dark;
                   border-bottom: 1px solid $purple-dark;
-                  padding-bottom: 0.4px;
+                  padding-bottom: 0.025rem;
                 }
               }
             }
@@ -542,12 +541,12 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
   @include responsive(D) {
     &-header {
       .desc {
-        margin-bottom: 24px;
+        margin-bottom: $spacing-r-24;
       }
 
       .post-image {
-        padding: 36px 0;
-        margin-bottom: 16px;
+        padding: $spacing-r-36 0;
+        margin-bottom: $spacing-r-16;
 
         img {
           border-radius: $radius-12;
@@ -558,7 +557,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
         &-date,
         &-reading-time {
           .icon-wrapper {
-            margin-right: 8px;
+            margin-right: $spacing-r-8;
           }
         }
 
@@ -598,32 +597,32 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
       // headings
       h1 {
         font-size: $font-size-heading-32;
-        padding: 54px 0 36px;
+        margin: $spacing-r-54 0 $spacing-r-36;
       }
 
       h2 {
         font-size: $font-size-heading-24;
-        padding: 48px 0 24px;
+        margin: $spacing-r-48 0 $spacing-r-24;
       }
 
       h3 {
         font-size: $font-size-heading-20;
-        padding: 36px 0 16px;
+        margin: $spacing-r-36 0 $spacing-r-16;
       }
 
       h4 {
         font-size: $font-size-subtitle;
-        padding: 24px 0 12px;
+        margin: $spacing-r-24 0 $spacing-r-12;
       }
 
       h5 {
         font-size: $font-size-heading-14;
-        padding: 16px 0 8px;
+        margin: $spacing-r-16 0 $spacing-r-8;
       }
 
       h6 {
         font-size: $font-size-heading-12;
-        padding: 12px 0 4px;
+        margin: $spacing-r-12 0 $spacing-r-4;
       }
     }
   }

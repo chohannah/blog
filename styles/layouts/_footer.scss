@@ -1,6 +1,6 @@
 .footer {
-  margin: 108px auto 54px;
-  padding: 54px 0;
+  margin: $spacing-r-108 auto $spacing-r-54;
+  padding: $spacing-r-54 0;
   max-width: 400px;
 
   .email {
@@ -8,9 +8,9 @@
     @include text-style(button);
     display: inline-block;
     position: relative;
-    margin-bottom: 36px;
-    padding: 8px 16px;
-    border-radius: 4px;
+    margin-bottom: $spacing-r-36;
+    padding: $spacing-r-8 $spacing-r-16;
+    border-radius: $radius-4;
     background-color: $bg;
     transition: background-color 350ms $ease-in-out-quart;
 
@@ -34,12 +34,12 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto 36px;
-    padding: 0 12px;
+    margin: 0 auto $spacing-r-36;
+    padding: 0 $spacing-r-12;
     max-width: 280px;
 
     &-item {
-      margin-bottom: 16px;
+      margin-bottom: $spacing-r-16;
 
       .item-text {
         @include text-style(button);
@@ -50,13 +50,13 @@
 
   .copyright {
     @include text-style(link, rgba($ghost-white, 0.6));
-    padding: 8px 12px;
+    padding: $spacing-r-8 $spacing-r-12;
     text-align: end;
   }
 
   @include responsive(S) {
     max-width: 100%;
-    margin-bottom: 54px;
+    margin-bottom: $spacing-r-54;
 
     .links-list {
       grid-template-rows: 1fr;

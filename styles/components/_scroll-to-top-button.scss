@@ -3,7 +3,7 @@
   position: fixed;
   right: 5%;
   bottom: 2.726%;
-  padding: 12px;
+  padding: $spacing-r-12;
   z-index: 108;
   border: 1px solid rgba($ghost-white, 0.2);
   border-radius: 50%;
@@ -17,7 +17,7 @@
   }
 
   @include responsive(T) {
-    padding: 16px;
+    padding: $spacing-r-16;
 
     svg {
       width: 24px;

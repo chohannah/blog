@@ -22,14 +22,14 @@ $circle-base-size: 120px;
 
 .post-nav {
   @include column-flex;
-  margin-bottom: 54px;
+  margin-bottom: $spacing-r-54;
   background-color: $bg;
 
   &-next,
   &-prev {
     @include flex;
     position: relative;
-    padding: 0 16px;
+    padding: 0 $spacing-r-16;
     width: 100%;
     height: 108px;
     overflow: hidden;
@@ -104,7 +104,7 @@ $circle-base-size: 120px;
 
     .subtitle {
       @include text-style(misc-sm);
-      margin-bottom: 4px;
+      margin-bottom: $spacing-r-4;
       opacity: 0.6;
     }
 
@@ -115,7 +115,7 @@ $circle-base-size: 120px;
 
   &-next-text {
     @include column-flex(center, end);
-    margin-right: 24px;
+    margin-right: $spacing-r-24;
 
     .title {
       text-align: end;
@@ -124,7 +124,7 @@ $circle-base-size: 120px;
 
   &-prev-text {
     @include column-flex(center, start);
-    margin-left: 16px;
+    margin-left: $spacing-r-16;
 
     .title {
       text-align: start;
@@ -150,7 +150,7 @@ $circle-base-size: 120px;
   }
 
   @include responsive(T) {
-    margin-bottom: 72px;
+    margin-bottom: $spacing-r-72;
 
     &-next {
       &::before {
@@ -192,7 +192,7 @@ $circle-base-size: 120px;
   }
 
   @include responsive(D) {
-    margin-bottom: 108px;
+    margin-bottom: $spacing-r-108;
 
     &-next {
       &::before {

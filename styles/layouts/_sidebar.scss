@@ -1,6 +1,6 @@
 .sidebar {
   @include flex(between);
-  margin-bottom: 54px;
+  margin-bottom: $spacing-r-54;
   width: 100%;
   height: $sidebar-height-sm;
   z-index: 108;
@@ -8,7 +8,7 @@
   backdrop-filter: blur(10px);
 
   &-logo {
-    padding: 8px;
+    padding: $spacing-r-8;
 
     a {
       @include flex;
@@ -42,12 +42,12 @@
       &-item {
         @include text-style(button);
         position: relative;
-        padding: 8px 12px;
+        padding: $spacing-r-8 $spacing-r-12;
 
         .menu-dynamic-bg {
           position: absolute;
           inset: 0;
-          border-radius: 4px;
+          border-radius: $radius-4;
           background-color: rgba($ghost-white, 0.1);
         }
       }
@@ -58,18 +58,18 @@
     @include column-flex(start, start);
     position: sticky;
     height: 100%;
-    padding: $content-padding 0;
+    padding: $vertial-padding-from-md 0;
     background-color: $bg;
     backdrop-filter: 0;
 
     &-logo {
-      margin-bottom: 36px;
+      margin-bottom: $spacing-r-36;
     }
 
     &-nav {
       &-list {
         @include column-flex(start, start);
-        margin-bottom: 36px;
+        margin-bottom: $spacing-r-36;
 
         &-item {
           font-size: 20px;
@@ -82,9 +82,9 @@
         @include text-style(button);
         display: inline-block;
         position: relative;
-        margin-bottom: 36px;
-        padding: 8px 12px;
-        border-radius: 4px;
+        margin-bottom: $spacing-r-36;
+        padding: $spacing-r-8 $spacing-r-12;
+        border-radius: $radius-4;
         transition: background-color 350ms $ease-in-out-quart;
 
         &::after {
@@ -105,11 +105,11 @@
       }
 
       .links-list {
-        margin-bottom: 36px;
-        padding: 0 12px;
+        margin-bottom: $spacing-r-36;
+        padding: 0 $spacing-r-12;
 
         &-item {
-          margin-bottom: 16px;
+          margin-bottom: $spacing-r-16;
 
           .item-text {
             @include text-style(button);
@@ -120,7 +120,7 @@
 
       .copyright {
         @include text-style(link, rgba($ghost-white, 0.6));
-        padding: 8px 12px;
+        padding: $spacing-r-8 $spacing-r-12;
       }
     }
   }

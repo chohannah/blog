@@ -1,12 +1,12 @@
 .tag {
   @include inline-flex;
   @include text-style(misc-14);
-  padding: 0 8px;
+  padding: 0 $spacing-r-8;
   height: 24px;
-  border-radius: 4px;
+  border-radius: $radius-4;
   background-color: $bg-badge;
 
   &:not(:last-child) {
-    margin-right: 8px;
+    margin-right: $spacing-r-8;
   }
 }

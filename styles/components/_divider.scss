@@ -3,7 +3,7 @@
     content: url(../../public/images/divider.svg);
     @include flex;
     margin: $divider-margin-top-bottom-sm 0;
-    padding: 8px 0;
+    padding: $spacing-r-8 0;
   }
 
   @include responsive(T) {
@@ -22,7 +22,7 @@
 %divider-hr {
   @include flex;
   margin: $divider-margin-top-bottom-sm 0;
-  padding: 8px 0;
+  padding: $spacing-r-8 0;
   background-image: url(../../public/images/divider.svg);
   background-repeat: no-repeat;
   background-position: center;

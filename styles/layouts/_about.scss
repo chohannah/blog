@@ -1,33 +1,36 @@
 .about {
-  padding: 28px 0;
+  padding: $content-padding 0;
 
   &-intro,
   &-details,
   &-values {
-    margin-bottom: 108px;
+    margin-bottom: $spacing-r-108;
   }
 
   &-intro,
   &-details {
     p {
       @include text-style(body);
-      margin-bottom: 1rem;
+      margin-bottom: $spacing-r-16;
     }
   }
 
   &-intro-title,
   &-details-title,
   &-values-title {
-    @include text-style(heading-32);
+    // balancer
+    span {
+      @include text-style(heading-32);
+    }
   }
 
   &-details-title {
-    margin-bottom: 16px;
+    margin-bottom: $spacing-r-16;
   }
 
   &-intro-title,
   &-values-title {
-    margin-bottom: 36px;
+    margin-bottom: $spacing-r-36;
   }
 
   &-values {
@@ -35,21 +38,21 @@
       &-item {
         dt {
           @include text-style(subtitle);
-          margin-bottom: 16px;
+          margin-bottom: $spacing-r-16;
 
           sup {
             @include text-style(blog-content-heading-12);
-            margin-right: 4px;
+            margin-right: $spacing-r-4;
             color: rgba($ghost-white, 0.6);
           }
         }
 
         dd {
           @include text-style(body);
-          margin-bottom: 1rem;
+          margin-bottom: $spacing-r-16;
 
           &:last-child {
-            margin-bottom: 36px;
+            margin-bottom: $spacing-r-36;
           }
         }
       }
@@ -59,7 +62,7 @@
   &-image {
     @include flex;
     position: relative;
-    margin-bottom: 108px;
+    margin-bottom: $spacing-r-108;
     width: 100%;
     min-height: 288px;
     max-height: 355px;
