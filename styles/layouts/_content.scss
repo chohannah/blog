@@ -1,5 +1,5 @@
 .content {
   @include responsive(T) {
-    padding: $content-padding 0;
+    padding: $vertial-padding-from-md 0;
   }
 }
