@@ -19,7 +19,7 @@ const ScrollToTopButton = () => {
       { threshold: 0.9 }
     )
 
-    const nav = document.querySelector('.sidebar .sidebar-logo')
+    const nav = document.querySelector('.gnb')
 
     if (nav) {
       observer.observe(nav)
