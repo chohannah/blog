@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast'
 import { siteConfig } from '../config'
 
 import SkipTopMainContentButton from '../components/modules/skip-to-main-content-button'
-import Sidebar from '../components/layouts/sidebar'
+import GNB from '../components/layouts/gnb'
 import Footer from '../components/layouts/footer'
 import Content from '../components/layouts/content'
 
@@ -53,34 +53,49 @@ export default function RootLayout({
       className={`${cormorant_garamond.variable} ${fira_code.variable}`}
     >
       <body suppressHydrationWarning={true}>
-        <div className="container">
-          <div className="row">
-            <SkipTopMainContentButton />
-            <Sidebar />
-            <Content>{children}</Content>
-            <Footer />
-            <Toaster
-              toastOptions={{
-                className: 'toast',
-                success: {
-                  style: {
-                    border: `1px solid ${wintergreenHex}`,
-                    backgroundColor: `rgba(${wintergreenRgb}, 0.4)`,
-                    color: ghostWhiteHex,
-                  },
-                },
-                error: {
-                  style: {
-                    border: `1px solid ${mainCoralHex}`,
-                    backgroundColor: `rgba(${mainCoralRgb}, 0.4)`,
-                    color: ghostWhiteHex,
-                  },
-                },
-              }}
-              position="top-center"
-            />
-          </div>
-        </div>
+        <SkipTopMainContentButton />
+        <Toaster
+          toastOptions={{
+            className: 'toast',
+            success: {
+              style: {
+                border: `1px solid ${wintergreenHex}`,
+                backgroundColor: `rgba(${wintergreenRgb}, 0.4)`,
+                color: ghostWhiteHex,
+              },
+            },
+            error: {
+              style: {
+                border: `1px solid ${mainCoralHex}`,
+                backgroundColor: `rgba(${mainCoralRgb}, 0.4)`,
+                color: ghostWhiteHex,
+              },
+            },
+          }}
+          position="top-center"
+        />
+        <Content>{children}</Content>
+        <Footer />
+        <Toaster
+          toastOptions={{
+            className: 'toast',
+            success: {
+              style: {
+                border: `1px solid ${wintergreenHex}`,
+                backgroundColor: `rgba(${wintergreenRgb}, 0.4)`,
+                color: ghostWhiteHex,
+              },
+            },
+            error: {
+              style: {
+                border: `1px solid ${mainCoralHex}`,
+                backgroundColor: `rgba(${mainCoralRgb}, 0.4)`,
+                color: ghostWhiteHex,
+              },
+            },
+          }}
+          position="top-center"
+        />
       </body>
     </html>
   )

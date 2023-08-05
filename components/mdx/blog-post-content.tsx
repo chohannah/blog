@@ -24,15 +24,20 @@ export const MdxRenderer = ({ code }: MdxProps) => {
       animate="animate"
       exit="exit"
     >
-      <motion.div
-        variants={fadeInHalf}
-        initial="initial"
-        whileInView="animate"
-        exit="exit"
-        viewport={{ amount: 0.02, once: true }}
-      >
-        <Component components={mdxComponents} />
-      </motion.div>
+      <div className="container">
+        <div className="row">
+          <motion.div
+            className="col-sm-4"
+            variants={fadeInHalf}
+            initial="initial"
+            whileInView="animate"
+            exit="exit"
+            viewport={{ amount: 0.02, once: true }}
+          >
+            <Component components={mdxComponents} />
+          </motion.div>
+        </div>
+      </div>
     </motion.article>
   )
 }

@@ -36,32 +36,38 @@ export default function HomePage() {
       initial="initial"
       animate="animate"
     >
-      <div className="home-text">
-        <motion.h2 className="home-title" variants={fadeInHalf}>
-          <Balancer ratio={0.4}>
-            Nice virtually meeting you <WavingHand />
-          </Balancer>
-        </motion.h2>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-4">
+            <div className="home-text">
+              <motion.h2 className="home-title" variants={fadeInHalf}>
+                <Balancer ratio={0.4}>
+                  Nice virtually meeting you <WavingHand />
+                </Balancer>
+              </motion.h2>
 
-        <motion.div className="home-content" variants={fadeInHalf}>
-          {' '}
-          <p>
-            A Software Engineer(Frontend) strives to make intuitive, aesthetic,
-            and inclusive products.
-          </p>
-          <p>
-            Currently going through Senior year of Computer Science major and
-            looking for opportunities.
-          </p>
-          <p>Previously a User Experience Designer.</p>
-        </motion.div>
+              <motion.div className="home-content" variants={fadeInHalf}>
+                {' '}
+                <p>
+                  A Software Engineer(Frontend) strives to make intuitive,
+                  aesthetic, and inclusive products.
+                </p>
+                <p>
+                  Currently going through Senior year of Computer Science major
+                  and looking for opportunities.
+                </p>
+                <p>Previously a User Experience Designer.</p>
+              </motion.div>
+            </div>
+
+            <motion.button variants={fadeInHalf} type="button">
+              <LinkOutlinedArrow href="/about" aria-label="Go to about page">
+                more about me
+              </LinkOutlinedArrow>
+            </motion.button>
+          </div>
+        </div>
       </div>
-
-      <motion.button variants={fadeInHalf} type="button">
-        <LinkOutlinedArrow href="/about" aria-label="Go to about page">
-          more about me
-        </LinkOutlinedArrow>
-      </motion.button>
     </motion.section>
   )
 }

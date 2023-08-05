@@ -39,61 +39,67 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({
       animate="animate"
       exit="exit"
     >
-      <motion.h1 className="title" variants={fadeInHalf}>
-        <Balancer>{title}</Balancer>
-      </motion.h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-4">
+            <motion.h1 className="title" variants={fadeInHalf}>
+              <Balancer>{title}</Balancer>
+            </motion.h1>
 
-      <motion.p className="desc" variants={fadeInHalf}>
-        {summary}
-      </motion.p>
+            <motion.p className="desc" variants={fadeInHalf}>
+              {summary}
+            </motion.p>
 
-      {image ? (
-        <motion.div className="post-image" variants={fadeInFull}>
-          <Image
-            layout="responsive"
-            width={272}
-            height={204}
-            src={`${image}`}
-            alt={`${title}'s thumbnail image`}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
-            loading="lazy"
-          />
-        </motion.div>
-      ) : null}
+            {image ? (
+              <motion.div className="post-image" variants={fadeInFull}>
+                <Image
+                  layout="responsive"
+                  width={272}
+                  height={204}
+                  src={`${image}`}
+                  alt={`${title}'s thumbnail image`}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMMngkAAUUA7kMdgcIAAAAASUVORK5CYII="
+                  loading="lazy"
+                />
+              </motion.div>
+            ) : null}
 
-      <motion.div className="header-bottom" variants={fadeInUp}>
-        <div className="misc">
-          <div className="misc-date">
-            <span className="icon-wrapper" aria-hidden>
-              <CalendarIcon />
-            </span>
-            <time
-              className="date"
-              dateTime={date}
-              aria-label="date when this post is written"
-            >
-              {formatDate(date)}
-            </time>
-          </div>
+            <motion.div className="header-bottom" variants={fadeInUp}>
+              <div className="misc">
+                <div className="misc-date">
+                  <span className="icon-wrapper" aria-hidden>
+                    <CalendarIcon />
+                  </span>
+                  <time
+                    className="date"
+                    dateTime={date}
+                    aria-label="date when this post is written"
+                  >
+                    {formatDate(date)}
+                  </time>
+                </div>
 
-          <div className="misc-reading-time">
-            <span className="icon-wrapper" aria-hidden>
-              <ClockIcon />
-            </span>
-            <p
-              className="reading-time"
-              aria-label="expected minutes to read this post"
-            >
-              {readingMinutes} min.
-            </p>
+                <div className="misc-reading-time">
+                  <span className="icon-wrapper" aria-hidden>
+                    <ClockIcon />
+                  </span>
+                  <p
+                    className="reading-time"
+                    aria-label="expected minutes to read this post"
+                  >
+                    {readingMinutes} min.
+                  </p>
+                </div>
+              </div>
+
+              <ul className="tags-list">
+                {tags && tags.map((tag, i) => <Tag key={i} tag={tag} />)}
+              </ul>
+            </motion.div>
           </div>
         </div>
-
-        <ul className="tags-list">
-          {tags && tags.map((tag, i) => <Tag key={i} tag={tag} />)}
-        </ul>
-      </motion.div>
+      </div>
     </motion.article>
   )
 }
