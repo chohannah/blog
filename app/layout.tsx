@@ -74,6 +74,7 @@ export default function RootLayout({
           }}
           position="top-center"
         />
+        <GNB />
         <Content>{children}</Content>
         <Footer />
         <Toaster
