@@ -1,9 +1,15 @@
 .content {
+  padding: $spacing-r-36 0;
+
   &:focus {
     outline: none;
   }
 
   @include responsive(T) {
-    padding: $vertial-padding-from-md 0;
+    padding: $spacing-r-48 0;
+  }
+
+  @include responsive(T) {
+    padding: $spacing-r-54 0;
   }
 }

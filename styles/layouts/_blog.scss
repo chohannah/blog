@@ -1,6 +1,4 @@
 .blog {
-  padding: $content-padding 0;
-
   &-title {
     @include text-style(heading-32);
     margin-bottom: $spacing-r-54;
@@ -99,7 +97,7 @@
       }
 
       .tags-list {
-        &-item {
+        &-post {
           @include inline-flex;
           @include text-style(misc-14);
           padding: 0 $spacing-r-8;
