@@ -1,5 +1,6 @@
 .content {
   padding: $spacing-r-36 0;
+  transition: all 700ms 500ms $ease-in-out-quart;
 
   &:focus {
     outline: none;
