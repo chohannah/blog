@@ -5,6 +5,7 @@
       "@/root/*": ["./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
+    "types": ["contentlayer"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
