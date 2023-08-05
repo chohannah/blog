@@ -8,10 +8,9 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { LayoutGroup, motion } from 'framer-motion'
 
-import LinkGhostArrow from '../modules/link-ghost-arrow'
 import { siteConfig } from '../../config'
 
-export default function Sidebar() {
+export default function GNB() {
   let pathname = usePathname() || '/'
   if (pathname.includes('/blog/')) {
     pathname = '/blog'
@@ -19,9 +18,9 @@ export default function Sidebar() {
   const currentYear = useMemo(() => new Date().getFullYear(), [])
 
   return (
-    <div className="col-sm-4 col-md-3 col-lg-3">
-      <header className="sidebar">
-        <h1 className="sidebar-logo">
+    <div className="col-sm-4">
+      <header className="gnb">
+        <h1 className="gnb-logo">
           <Link href="/">
             <Image
               width={42}
@@ -34,8 +33,8 @@ export default function Sidebar() {
         </h1>
 
         <LayoutGroup>
-          <nav className="sidebar-nav">
-            <ul className="sidebar-nav-list">
+          <nav className="gnb-links">
+            <ul className="gnb-links-list">
               {Object.entries(siteConfig.navItems).map(([path, { menu }]) => {
                 const isActive = path === pathname
 
@@ -48,12 +47,12 @@ export default function Sidebar() {
                       'menu-inactive': !isActive,
                     })}
                   >
-                    <li className="sidebar-nav-list-item">
+                    <li className="gnb-links-list-item">
                       {menu}
                       {path === pathname ? (
                         <motion.div
                           className="menu-dynamic-bg"
-                          layoutId="sidebar"
+                          layoutId="gnb"
                           transition={{
                             type: 'spring',
                             stiffness: 216,
@@ -68,28 +67,6 @@ export default function Sidebar() {
             </ul>
           </nav>
         </LayoutGroup>
-
-        <div className="sidebar-links sm-hidden">
-          <Link className="email" href="mailto:hey.yejinc@gmail.com">
-            {siteConfig.email}
-          </Link>
-
-          <ul className="links-list">
-            {siteConfig.socialItems.map((item) => {
-              return (
-                <li className="links-list-item" key={item.name}>
-                  <LinkGhostArrow href={item.link}>
-                    <span className="item-text">{item.name}</span>
-                  </LinkGhostArrow>
-                </li>
-              )
-            })}
-          </ul>
-
-          <p className="copyright">
-            &copy;{currentYear} {siteConfig.name}
-          </p>
-        </div>
       </header>
     </div>
   )
