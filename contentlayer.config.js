@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import readingTime from 'reading-time'
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
@@ -9,6 +10,10 @@ const computedFields = {
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath,
+  },
+  readingMinutes: {
+    type: 'string',
+    resolve: (doc) => Math.ceil(readingTime(doc.body.raw).minutes),
   },
   // tweetIds: {
   //   type: 'array',
@@ -23,8 +28,8 @@ const computedFields = {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: doc.title,
-      datePublished: doc.publishedAt,
-      dateModified: doc.publishedAt,
+      datePublished: doc.date,
+      dateModified: doc.date,
       description: doc.summary,
       image: doc.image
         ? `https://yejinc.github.io${doc.image}`
@@ -54,17 +59,24 @@ export const Blog = defineDocumentType(() => ({
       required: true,
     },
     date: {
-      type: 'string',
+      type: 'date',
       description: 'The date of the post',
       required: true,
     },
     image: {
       type: 'string',
       description: 'The cover image of the post',
+      required: false,
+    },
+    tags: {
+      type: 'list',
+      require: true,
+      of: {
+        type: 'string',
+      },
     },
     draft: {
       type: 'boolean',
-      required: true,
     },
   },
   computedFields,
