@@ -1,0 +1,77 @@
+.gnb {
+  &-wrapper {
+    @include flex(between);
+    margin: $spacing-r-24 0;
+    width: 100%;
+    z-index: 108;
+    background-color: rgba($bg, 0.6);
+    backdrop-filter: blur(10px);
+  }
+
+  &-logo {
+    padding: $spacing-r-8;
+
+    a {
+      @include flex;
+    }
+  }
+
+  &-links {
+    &-list {
+      @include flex;
+
+      a {
+        @include flex;
+        transition: all 400ms 200ms ease-in-out;
+
+        &:hover {
+          font-weight: 600;
+          opacity: 1;
+        }
+      }
+
+      .menu-active {
+        font-weight: 600;
+        opacity: 1;
+      }
+
+      .menu-inactive {
+        font-weight: 300;
+        opacity: 0.6;
+      }
+
+      &-item {
+        @include text-style(button);
+        position: relative;
+        padding: $spacing-r-8 $spacing-r-12;
+
+        .menu-dynamic-bg {
+          position: absolute;
+          inset: 0;
+          border-radius: $radius-4;
+          background-color: rgba($ghost-white, 0.1);
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-links {
+      &-list {
+        a {
+          &:not(:last-child) {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-links {
+      &-item {
+        font-size: $font-size-r-20;
+      }
+    }
+  }
+}
