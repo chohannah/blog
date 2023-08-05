@@ -20,6 +20,7 @@ html {
 
 body {
   display: flex;
+  flex-direction: column;
   font-family: $font-main;
   color: $ghost-white;
   accent-color: $purple-dark;
