@@ -12,6 +12,7 @@ import { siteConfig } from '@/root/config'
 import { CalendarIcon, ClockIcon } from '@/root/components/modules/icons'
 import Tag from '@/root/components/modules/tag'
 import { staggerHalf, fadeInHalf, fadeInUp } from '@/root/constants/animations'
+import formatDate from '@/root/lib/formatDate'
 
 // export const metadata: Metadata = {
 //   title: 'blog',
@@ -83,20 +84,24 @@ export default function BlogPage() {
 
                     <div className="misc">
                       <div className="misc-date">
-                        <span className="icon-wrapper">
+                        <span className="icon-wrapper" aria-hidden>
                           <CalendarIcon />
                         </span>
-                        <time className="date" dateTime={post.date}>
-                          2023-05-23
+                        <time
+                          className="date"
+                          dateTime={post.date}
+                          aria-label="date when this post is written"
+                        >
+                          {formatDate(post.date)}
                         </time>
                       </div>
                       <div className="misc-reading-time">
-                        <span className="icon-wrapper">
+                        <span className="icon-wrapper" aria-hidden>
                           <ClockIcon />
                         </span>
                         <p
                           className="reading-time"
-                          aria-label={`this post takes ${post.readingMinutes} minutes to read`}
+                          aria-label="expected minutes to read this post"
                         >
                           {post.readingMinutes} min.
                         </p>
