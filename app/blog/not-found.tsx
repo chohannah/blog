@@ -89,7 +89,7 @@ export default function NotFound() {
                   Double-check the URL for any typos or errors.
                 </li>
                 <li className="not-found-guide-list-item">
-                  Return to the <Link href="/">Homepage</Link> to explore other
+                  Return to the <Link href="/blog">Blog</Link> to explore other
                   content.
                 </li>
                 <li className="not-found-guide-list-item">
@@ -100,9 +100,9 @@ export default function NotFound() {
 
               <LinkOutlinedArrow
                 className="not-found-button"
-                href="/"
+                href="/blog"
                 target="_blank"
-                aria-label="Go to home"
+                aria-label="Go to blog"
               >
                 Back to home
               </LinkOutlinedArrow>
