@@ -188,10 +188,9 @@ export default function AboutPage() {
                 </motion.div>
               </dl>
             </motion.article>
+            <ScrollToTopButton />
           </div>
         </div>
-
-        <ScrollToTopButton />
       </div>
     </motion.section>
   )
