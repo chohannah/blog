@@ -89,7 +89,7 @@ progress {
   }
 }
 
-@include responsive(T) {
+@include responsive(D) {
   html {
     font-size: $font-size-p-18;
   }
