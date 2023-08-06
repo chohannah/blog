@@ -194,7 +194,7 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
     }
 
     ol {
-      list-style: decimal;
+      list-style: decimal-leading-zero;
 
       li {
         margin: $spacing-r-16 0;
