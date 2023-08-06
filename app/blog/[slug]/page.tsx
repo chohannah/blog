@@ -52,7 +52,7 @@ export default async function BlogPost({ params }: { params: any }) {
   const nextPost = allBlogs[currentIndex + 1]
 
   return (
-    <section className="blog-post transition-fade">
+    <section className="blog-post">
       <ReadingProgressBar />
 
       <BlogPostHeader
