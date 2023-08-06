@@ -31,7 +31,8 @@ const Footer = () => {
             </ul>
 
             <p className="copyright">
-              &copy;{currentYear} {siteConfig.name}
+              &copy;{currentYear} {siteConfig.name} · powered by Next.js · made
+              with 💜
             </p>
           </div>
         </div>
