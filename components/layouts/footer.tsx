@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm-4">
-            <Link className="email" href="mailto:hey.yejinc@gmail.com">
+            <Link className="email" href="mailto:hi.joyejin@gmail.com">
               {siteConfig.email}
             </Link>
 
@@ -22,7 +22,7 @@ const Footer = () => {
               {siteConfig.socialItems.map((item) => {
                 return (
                   <li className="links-list-item" key={item.name}>
-                    <LinkGhostArrow href={item.link}>
+                    <LinkGhostArrow href={item.link} target="_blank">
                       <span className="item-text">{item.name}</span>
                     </LinkGhostArrow>
                   </li>
