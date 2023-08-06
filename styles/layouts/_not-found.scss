@@ -42,16 +42,15 @@
   }
 
   &-guide {
-    margin-bottom: $spacing-r-48;
-
     &-title {
       @include text-style(heading-20);
       margin-bottom: $spacing-r-8;
     }
 
     &-list {
-      list-style: decimal-leading-zero;
+      margin-bottom: $spacing-r-48;
       padding-left: $spacing-r-36;
+      list-style: decimal-leading-zero;
 
       &-item {
         @include text-style(body-sm);
