@@ -38,7 +38,8 @@ export default function AboutPage() {
     >
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+          <div className="col-sm-4 col-md-10 col-lg-8">
             <h1 className="srOnly">about page</h1>
 
             <motion.article className="about-intro" variants={fadeInHalf}>
@@ -190,6 +191,7 @@ export default function AboutPage() {
             </motion.article>
             <ScrollToTopButton />
           </div>
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </motion.section>

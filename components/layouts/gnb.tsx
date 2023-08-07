@@ -21,7 +21,8 @@ export default function GNB() {
     <header className="gnb">
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+          <div className="col-sm-4 col-md-10 col-lg-8">
             <div className="gnb-wrapper">
               <h1 className="gnb-logo">
                 <Link href="/">
@@ -74,6 +75,7 @@ export default function GNB() {
               </LayoutGroup>
             </div>
           </div>
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </header>

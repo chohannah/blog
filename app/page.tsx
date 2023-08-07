@@ -38,7 +38,8 @@ export default function HomePage() {
     >
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+          <div className="col-sm-4 col-md-10 col-lg-8">
             <div className="home-text">
               <motion.h2 className="home-title" variants={fadeInHalf}>
                 <Balancer ratio={0.4}>
@@ -66,6 +67,7 @@ export default function HomePage() {
               </LinkOutlinedArrow>
             </motion.button>
           </div>
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </motion.section>

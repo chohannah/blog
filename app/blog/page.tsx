@@ -36,7 +36,8 @@ export default function BlogPage() {
     >
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+          <div className="col-sm-4 col-md-10 col-lg-8">
             <motion.h1 className="blog-title" variants={fadeInHalf}>
               All Posts ({allBlogs.length})
             </motion.h1>
@@ -124,6 +125,7 @@ export default function BlogPage() {
                 ))}
             </motion.section>
           </div>
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </motion.section>
