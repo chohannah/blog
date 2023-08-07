@@ -47,7 +47,7 @@ export default function NotFound() {
 
               <LinkOutlinedArrow
                 className="not-found-button"
-                href="/"
+                href="/blog"
                 aria-label="Go to blog"
               >
                 Back to blog
@@ -89,8 +89,8 @@ export default function NotFound() {
                   Double-check the URL for any typos or errors.
                 </li>
                 <li className="not-found-guide-list-item">
-                  Return to the <Link href="/blog">Blog</Link> to explore other
-                  content.
+                  Return to the <Link href="/blog">Blog page</Link> to explore
+                  other content.
                 </li>
                 <li className="not-found-guide-list-item">
                   Use the navigation menu above to find what you&apos;re looking
@@ -104,7 +104,7 @@ export default function NotFound() {
                 target="_blank"
                 aria-label="Go to blog"
               >
-                Back to home
+                Back to blog
               </LinkOutlinedArrow>
             </motion.div>
           </div>
