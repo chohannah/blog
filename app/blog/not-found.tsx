@@ -66,7 +66,7 @@ export default function NotFound() {
                   alt="error image"
                   className="giphy-embed"
                   fill
-                  loading="lazy"
+                  priority
                 />
               </div>
               <figcaption className="image-caption">

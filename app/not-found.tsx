@@ -66,7 +66,7 @@ export default function NotFound() {
                   alt="error image"
                   className="giphy-embed"
                   fill
-                  loading="lazy"
+                  priority
                 />
               </div>
               <figcaption className="image-caption">
@@ -101,7 +101,6 @@ export default function NotFound() {
               <LinkOutlinedArrow
                 className="not-found-button"
                 href="/"
-                target="_blank"
                 aria-label="Go to home"
               >
                 Back to home
