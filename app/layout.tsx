@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond } from 'next/font/google'
-import { Fira_Code } from 'next/font/google'
+
+import { Cormorant_Garamond, Fira_Code } from 'next/font/google'
 
 import { Toaster } from 'react-hot-toast'
 
