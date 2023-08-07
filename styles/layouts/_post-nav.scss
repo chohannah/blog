@@ -22,7 +22,7 @@ $circle-base-size: 120px;
 
 .post-nav {
   @include column-flex;
-  margin-bottom: $spacing-r-54;
+  margin: $spacing-r-108 0 $spacing-r-54;
   background-color: $bg;
 
   &-next,
