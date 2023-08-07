@@ -12,7 +12,7 @@
       padding: $spacing-r-16;
       margin-bottom: $spacing-r-48;
       opacity: 0.9;
-      border-radius: $radius-4;
+      border-radius: $radius-8;
       border: 1px solid $border;
       background-color: transparent;
       transition: opacity 200ms $ease-in-out-quart,
@@ -47,6 +47,16 @@
       .text-group {
         margin-bottom: $spacing-r-16;
 
+        .title span,
+        .desc {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          white-space: pre-wrap;
+          text-overflow: ellipsis;
+        }
+
         .title {
           margin-bottom: $spacing-r-8;
 
@@ -57,11 +67,6 @@
 
         .desc {
           @include text-style(desc);
-          display: -webkit-box;
-          overflow: hidden;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-          white-space: pre-wrap;
         }
       }
 
@@ -125,8 +130,9 @@
       .item-image {
         @include inline-flex;
         margin: 0 $spacing-r-16 0 0;
-        min-width: 27vw;
-        min-height: 20vw;
+        min-width: 28vw;
+        min-height: 21vw;
+        border-radius: $radius-8 $radius-4 $radius-4 $radius-8;
       }
     }
   }
@@ -138,8 +144,9 @@
       }
 
       .item-image {
-        min-width: 348px;
-        min-height: 261px;
+        min-width: 246px;
+        min-height: 184.5px;
+        border-radius: $radius-12 $radius-8 $radius-8 $radius-12;
       }
     }
   }
