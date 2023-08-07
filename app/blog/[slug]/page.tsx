@@ -8,6 +8,7 @@ import PostNav from '@/root/components/layouts/post-nav'
 import ScrollToTopButton from '@/root/components/modules/scroll-to-top-button'
 import ReadingProgressBar from '@/root/components/mdx/reading-progress-bar'
 import BlogPostHeader from '@/root/components/mdx/blog-post-header'
+import Comments from '@/root/components/mdx/comments'
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -65,6 +66,8 @@ export default async function BlogPost({ params }: { params: any }) {
       />
 
       <MdxRenderer code={post.body.code} />
+
+      <Comments />
 
       <PostNav prevPost={prevPost} nextPost={nextPost} />
 
