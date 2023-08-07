@@ -26,8 +26,10 @@ export const MdxRenderer = ({ code }: MdxProps) => {
     >
       <div className="container">
         <div className="row">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+
           <motion.div
-            className="col-sm-4"
+            className="col-sm-4 col-md-10 col-lg-8"
             variants={fadeInHalf}
             initial="initial"
             whileInView="animate"
@@ -36,6 +38,8 @@ export const MdxRenderer = ({ code }: MdxProps) => {
           >
             <Component components={mdxComponents} />
           </motion.div>
+
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </motion.article>

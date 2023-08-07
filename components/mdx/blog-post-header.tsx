@@ -41,7 +41,9 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({
     >
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
+
+          <div className="col-sm-4 col-md-10 col-lg-8">
             <motion.h1 className="title" variants={fadeInHalf}>
               <Balancer>{title}</Balancer>
             </motion.h1>
@@ -98,6 +100,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({
               </ul>
             </motion.div>
           </div>
+
+          <div className="col-md-1 col-lg-2" aria-hidden></div>
         </div>
       </div>
     </motion.article>
