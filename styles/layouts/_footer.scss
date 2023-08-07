@@ -1,5 +1,4 @@
 .footer {
-  margin: $spacing-r-108 auto $spacing-r-54;
   padding: $spacing-r-54 0;
   max-width: 400px;
 
@@ -52,6 +51,7 @@
     @include text-style(link, rgba($ghost-white, 0.6));
     padding: $spacing-r-8 $spacing-r-12;
     text-align: end;
+    font-style: italic;
   }
 
   @include responsive(S) {
