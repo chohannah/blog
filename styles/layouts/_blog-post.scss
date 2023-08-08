@@ -420,6 +420,15 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
     hr {
       @extend %divider-hr;
     }
+
+    //math equation
+    .math {
+      .katex {
+        &-html {
+          display: none;
+        }
+      }
+    }
   }
 
   @include responsive(T) {
