@@ -17,6 +17,8 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-wrap-balancer": "^0.4.1",
+    "rehype-katex": "^6.0.3",
+    "remark-math": "^5.1.1",
     "sass": "^1.62.1",
     "shiki": "^0.14.1",
     "tocbot": "^4.21.0"
