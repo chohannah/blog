@@ -40,11 +40,12 @@ export default function BlogPage() {
 
           <div className="col-sm-4 col-md-10 col-lg-8">
             <motion.h1 className="blog-title" variants={fadeInHalf}>
-              All Posts ({allBlogs.length})
+              All Posts ({allBlogs.filter((post) => !post.draft).length})
             </motion.h1>
 
             <motion.section variants={staggerHalf}>
               {allBlogs
+                .filter((post) => !post.draft)
                 .sort((a, b) => {
                   if (new Date(a.date) > new Date(b.date)) {
                     return -1
