@@ -11,7 +11,7 @@
   background-color: $bg-badge;
 
   &:focus {
-    left: $spacing-p-16;
+    transform: translateX($spacing-p-16);
   }
 
   @include responsive(T) {
