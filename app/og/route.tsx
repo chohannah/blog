@@ -11,26 +11,13 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
   const postUrl = searchParams.get('url')
 
   let backgroundImage = '../../public/images/og-image.png'
-  const logoSvg = '../../public/images/logo.svg'
-
-  const fontDataPromises = [
-    fetch(
-      new URL(
-        '../../public/fonts/CormorantGaramond-SemiBold.ttf',
-        import.meta.url
-      )
-    ).then((res) => res.arrayBuffer()),
-    fetch(
-      new URL(
-        '../../public/fonts/CormorantGaramond-LightItalic.ttf',
-        import.meta.url
-      )
-    ).then((res) => res.arrayBuffer()),
-  ]
-
-  const [semiBoldFontData, semiBoldItalicFontData] = await Promise.all(
-    fontDataPromises
-  )
+  const font = fetch(
+    new URL(
+      '../../public/fonts/CormorantGaramond-SemiBold.ttf',
+      import.meta.url
+    )
+  ).then((res) => res.arrayBuffer())
+  const fontData = await font
 
   return new ImageResponse(
     (
@@ -124,13 +111,8 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
       fonts: [
         {
           name: 'Cormorant Garamond SemiBold',
-          data: semiBoldFontData,
+          data: fontData,
           style: 'normal',
-        },
-        {
-          name: 'Cormorant Garamond Light Italic',
-          data: semiBoldItalicFontData,
-          style: 'italic',
         },
       ],
     }
