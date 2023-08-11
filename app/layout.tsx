@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-
 import { Cormorant_Garamond, Fira_Code } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 import { Toaster } from 'react-hot-toast'
 
@@ -97,6 +97,8 @@ export default function RootLayout({
           }}
           position="top-center"
         />
+
+        <Analytics />
       </body>
     </html>
   )
