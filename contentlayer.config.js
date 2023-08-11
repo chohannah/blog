@@ -34,9 +34,9 @@ const computedFields = {
       dateModified: doc.date,
       description: doc.summary,
       image: doc.image
-        ? `https://yejinc.github.io${doc.image}`
-        : `https://yejinc.github.io/api/og?title=${doc.title}`,
-      url: `https://yejinc.github.io/blog/${doc._raw.flattenedPath}`,
+        ? `https://joyejin.com${doc.image}`
+        : `https://joyejin.com/api/og?title=${doc.title}`,
+      url: `https://joyejin.com/blog/${doc._raw.flattenedPath}`,
       author: {
         '@type': 'Person',
         name: 'Yejin Cho',
