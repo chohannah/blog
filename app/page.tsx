@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { fadeInHalf, staggerHalf } from '../constants/animations'
 import Balancer from 'react-wrap-balancer'
 
-import { homeBody } from '../lib/page-content'
 import LinkOutlinedArrow from '../components/modules/link-outlined-arrow'
 
 const WavingHand = () => (
