@@ -50,10 +50,10 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            alignItems: 'space-between',
+            alignItems: 'flex-start',
             marginRight: '3.75rem',
-            width: '56.25rem',
-            height: 'auto',
+            width: '960px',
+            height: '573px',
             fontFamily: 'Cormorant Garamond',
             lineHeight: '120%',
             textAlign: 'left',
@@ -94,50 +94,6 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
             }}
           >
             {postTitle}
-          </p>
-
-          <p
-            style={{
-              display: 'flex',
-              justifyContent: 'start',
-              alignItems: 'center',
-              padding: '1rem 1.5rem',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(21, 21, 21, 0.4)',
-              backdropFilter: 'blur(8px)',
-            }}
-          >
-            <span
-              style={{
-                display: 'inline-block',
-                marginRight: '3.375rem',
-                backgroundImage: `url(${logoSvg})`,
-              }}
-            >
-              {logoSvg}
-            </span>
-            <span
-              style={{
-                display: 'inline-block',
-                position: 'relative',
-                top: '10px',
-                marginRight: '0.75rem',
-                fontSize: '2.5rem',
-                fontWeight: '600',
-              }}
-            >
-              joyejin
-            </span>
-            <span
-              style={{
-                display: 'inline-block',
-                position: 'relative',
-                bottom: '4px',
-                fontSize: '2rem',
-              }}
-            >
-              — Frontend Engineer
-            </span>
           </p>
         </div>
 
