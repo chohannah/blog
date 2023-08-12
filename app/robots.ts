@@ -1,11 +1,15 @@
-export default function robots() {
+import { MetadataRoute } from 'next'
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: '*',
+        allow: '/',
+        disallow: '/private/',
       },
     ],
-    sitemap: 'http://localhost:3000/sitemap.xml',
-    host: 'http://localhost:3000',
+    sitemap: 'http://joyejin.com/sitemap.xml',
+    host: 'http://joyejin.com',
   }
 }
