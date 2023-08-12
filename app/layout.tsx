@@ -28,11 +28,20 @@ const fira_code = Fira_Code({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`${siteConfig.baseUrl}`),
   title: {
-    default: `${siteConfig.title}`,
+    default: `${siteConfig.name}`,
     template: `${siteConfig.template}`,
   },
   description: `${siteConfig.description}`,
+  openGraph: {
+    title: `${siteConfig.title}`,
+    description: `${siteConfig.description}`,
+    url: `${siteConfig.baseUrl}`,
+    siteName: `${siteConfig.name}`,
+    locale: `${siteConfig.locale}`,
+    type: 'website',
+  },
 }
 
 // toast styles constants
