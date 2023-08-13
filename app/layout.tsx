@@ -30,12 +30,12 @@ const fira_code = Fira_Code({
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteConfig.baseUrl}`),
   title: {
-    default: `${siteConfig.name}`,
+    default: `${siteConfig.title}`,
     template: `${siteConfig.template}`,
   },
   description: `${siteConfig.description}`,
   openGraph: {
-    title: `${siteConfig.title}`,
+    title: `${siteConfig.template}`,
     description: `${siteConfig.description}`,
     url: `${siteConfig.baseUrl}`,
     siteName: `${siteConfig.name}`,
