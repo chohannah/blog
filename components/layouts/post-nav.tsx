@@ -17,7 +17,7 @@ const PostNav = ({ prevPost, nextPost }: PostNavProps) => {
           <div className="col-md-1 col-lg-2" aria-hidden></div>
 
           <div className="col-sm-4 col-md-10 col-lg-8">
-            {nextPost && (
+            {nextPost ? (
               <Link
                 href={`/blog/${nextPost.slug}`}
                 className="post-nav-next"
@@ -32,8 +32,8 @@ const PostNav = ({ prevPost, nextPost }: PostNavProps) => {
                   <MDArrowIcon />
                 </span>
               </Link>
-            )}
-            {prevPost && (
+            ) : null}
+            {prevPost ? (
               <Link
                 href={`/blog/${prevPost.slug}`}
                 className="post-nav-prev"
@@ -48,7 +48,7 @@ const PostNav = ({ prevPost, nextPost }: PostNavProps) => {
                   <MDArrowIcon />
                 </span>
               </Link>
-            )}
+            ) : null}
           </div>
 
           <div className="col-md-1 col-lg-2" aria-hidden></div>
