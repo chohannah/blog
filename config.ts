@@ -1,9 +1,11 @@
 export const siteConfig = {
-  name: 'yejin cho',
+  name: 'Jo Yejin',
   template: '%s | joyejin',
   title: 'joyejin',
-  description: 'tech | mindfulness | design',
-  email: 'hey.yejinc@gmail.com',
+  description: 'Sharing thoughts on tech, mindfulness, design and more.',
+  baseUrl: 'https://joyejin.com',
+  email: 'hi.joyejin@gmail.com',
+  locale: 'en-GB',
   navItems: {
     '/about': {
       menu: 'about',
@@ -11,26 +13,23 @@ export const siteConfig = {
     '/blog': {
       menu: 'blog',
     },
-    '/links': {
-      menu: 'links',
-    },
   },
   socialItems: [
     {
       name: 'GitHub',
-      link: 'https://github.com/yejinc',
+      link: 'https://github.com/joyjs',
     },
     {
       name: 'Playlist',
-      link: 'https://music.apple.com/profile/yejinlistens',
+      link: 'https://music.apple.com/profile/joyejin',
     },
     {
       name: 'Read.cv',
-      link: 'https://read.cv/yejincho',
+      link: 'https://read.cv/joyejin',
     },
     {
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/yjincho/',
+      link: 'https://www.linkedin.com/in/joyejin/',
     },
   ],
 }
