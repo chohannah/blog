@@ -42,15 +42,18 @@ export async function generateMetadata({
 }
 
 export default async function BlogPost({ params }: { params: any }) {
-  const post = allBlogs.find((post) => post.slug === params.slug)
+  const filteredPost = allBlogs.filter((post) => !post.draft)
+  const post = filteredPost.find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
 
-  const currentIndex = allBlogs.findIndex((post) => post.slug === params.slug)
-  const prevPost = allBlogs[currentIndex - 1]
-  const nextPost = allBlogs[currentIndex + 1]
+  const currentIndex = filteredPost.findIndex(
+    (post) => post.slug === params.slug
+  )
+  const prevPost = filteredPost[currentIndex - 1]
+  const nextPost = filteredPost[currentIndex + 1]
 
   return (
     <section className="blog-post">
