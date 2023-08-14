@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allBlogs } from '@/root/.contentlayer/generated'
 import { MdxRenderer } from '@/root/components/mdx/blog-post-content'
+import { siteConfig } from '@/root/config'
 
 import PostNav from '@/root/components/layouts/post-nav'
 import ScrollToTopButton from '@/root/components/modules/scroll-to-top-button'
@@ -27,7 +28,10 @@ export async function generateMetadata({
     return
   }
 
-  const { title, date: publishedTime, summary: description } = post
+  const { title, date: publishedTime, summary: description, image, slug } = post
+  const ogImage = image
+    ? `${siteConfig.baseUrl}${image}`
+    : `${siteConfig.baseUrl}/og?title=${title}`
 
   return {
     title,
@@ -36,7 +40,12 @@ export async function generateMetadata({
       title,
       description,
       publishedTime,
-      // url: `https://joyejin.com/blog/${slug}`,
+      url: `${siteConfig.baseUrl}/blog/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
     },
   }
 }
