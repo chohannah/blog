@@ -12,7 +12,7 @@ draft: false
 
 In this tutorial, we’ll use [Contentlayer](https://www.contentlayer.dev/) to source the files and use [KaTex](https://katex.org/) to render math typesettings.
 
-## step 1. Install packages
+# step 1. Install packages
 
 Let's start by installing the required packages:
 
@@ -36,20 +36,18 @@ yarn add remark-math rehype-katex
 npm install remark-math rehype-katex
 ```
 
-### step 2. configure contentlayer
+<hr />
+
+# step 2. configure contentlayer
 
 Then set up next.config.js to wrap configuration options. The contentlayer.config.js configures Contentlayer to ensure your markdown files are processed correctly.
 
-1. next.config.js
-
-```js
+```js title="next.config.js"
 const { withContentlayer } = require('next-contentlayer')
 module.exports = withContentlayer({})
 ```
 
-2. contentlayer.config.js
-
-```js
+```js title="contentlayer.config.js"
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
@@ -79,7 +77,9 @@ export default makeSource({
 
 In Next.js 13, CSS files will be applied automatically without additional scripts.
 
-### step 3. add LaTex text to `.mdx`document
+<hr />
+
+# step 3. add LaTex text to `.mdx`document
 
 Now, let’s create a new mdx file to check if the installations are successful.
 
@@ -97,11 +97,13 @@ $P → Q ⟺ ~Q → ~P$
 $(n + 1)^2 ≥ 2^n$
 ```
 
-### step 4. render on a page
+<hr />
+
+# step 4. render on a page
 
 Since we’re using app directory, let’s create `page.tsx` in `app > blog > [slug]`,
 
-```tsx
+```tsx title="page.tsx"
 import { allBlogs } from '@/root/.contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
