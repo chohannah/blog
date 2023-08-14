@@ -1,0 +1,132 @@
+---
+title: 'Using KaTex in markdown with Next.js 13 app router'
+summary: 'Learn how to use math equations in MDX files on the Next.js 13 app router (directory) environment.'
+date: 2023-08-14
+tags:
+  - Math
+  - Next.js
+  - Contentlayer
+  - Markdown
+draft: false
+---
+
+In this tutorial, we’ll use [Contentlayer](https://www.contentlayer.dev/) to source the files and use [KaTex](https://katex.org/) to render math typesettings.
+
+## step 1. Install packages
+
+Let's start by installing the required packages:
+
+### 1. `contentlayer`
+
+To simplify the process, we'll install a basic form of Contentlayer. Thus [here](https://www.contentlayer.dev/docs/getting-started-cddd76b7) are more details on installing Contentlayer.
+
+```bash
+yarn add contentlayer next-contentlayer
+# or
+npm install contentlayer next-contentlayer
+```
+
+Here, [remark-math](https://github.com/remarkjs/remark-math/tree/main) handles parsing math equations, including [rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex). rehype-katex transforms the parsed equations into HTML with KaTex formatting.
+
+### 2. `remark-math` and `rehype-katex`
+
+```bash
+yarn add remark-math rehype-katex
+# or
+npm install remark-math rehype-katex
+```
+
+### step 2. configure contentlayer
+
+Then set up next.config.js to wrap configuration options. The contentlayer.config.js configures Contentlayer to ensure your markdown files are processed correctly.
+
+1. next.config.js
+
+```js
+const { withContentlayer } = require('next-contentlayer')
+module.exports = withContentlayer({})
+```
+
+2. contentlayer.config.js
+
+```js
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the post',
+      required: true,
+    },
+  },
+}))
+
+export default makeSource({
+  contentDirPath: 'posts',
+  documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
+})
+```
+
+In Next.js 13, CSS files will be applied automatically without additional scripts.
+
+### step 3. add LaTex text to `.mdx`document
+
+Now, let’s create a new mdx file to check if the installations are successful.
+
+```markdown
+---
+title: Math equations
+---
+
+# math equations
+
+The **Pythagorean equation**: $a=\sqrt{b^2 + c^2}$.
+
+$P → Q ⟺ ~Q → ~P$
+
+$(n + 1)^2 ≥ 2^n$
+```
+
+### step 4. render on a page
+
+Since we’re using app directory, let’s create `page.tsx` in `app > blog > [slug]`,
+
+```tsx
+import { allBlogs } from '@/root/.contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+
+export type MdxProps = {
+  code: string
+}
+
+export const MdxRenderer = ({ code }: MdxProps) => {
+  const Component = useMDXComponent(code)
+
+  return (
+    <Component />
+  )
+}
+
+
+export default async function BlogPost({ params }: { params: any }) {
+  const post = allBlogs.find((post) => post.slug === params.slug)
+
+  return (
+    <section className="blog-post">
+      <MdxRenderer code={post.body.code} />
+    </section>
+}
+```
+
+![Katex rendered](/images/posts/math-katex/rendered-math-equations.png)
+And Voilà! We finally just rendered our math equations.
