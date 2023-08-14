@@ -25,6 +25,7 @@ const ReadingProgressBar = () => {
       className="reading-progress-bar"
       value={`${width}`}
       max={100}
+      style={{ backgroundColor: 'transparent' }}
     ></progress>
   )
 }
