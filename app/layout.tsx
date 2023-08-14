@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   description: `${siteConfig.description}`,
   openGraph: {
-    title: `${siteConfig.template}`,
+    title: `${siteConfig.title}`,
     description: `${siteConfig.description}`,
     url: `${siteConfig.baseUrl}`,
     siteName: `${siteConfig.name}`,
