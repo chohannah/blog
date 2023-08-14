@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/server'
 import { NextRequest } from 'next/server'
-import Image from 'next/image'
 
 export const runtime = 'edge'
 
@@ -9,8 +9,8 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
   const postTitle = searchParams.get('title')
   const postImage = searchParams.get('image')
   const postUrl = searchParams.get('url')
+  const backgroundImage = 'https://joyejin.com/images/og-image.png'
 
-  let backgroundImage = '../../public/images/og-image.png'
   const font = fetch(
     new URL(
       '../../public/fonts/CormorantGaramond-SemiBold.ttf',
@@ -27,7 +27,7 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
           width: '100%',
           height: '100%',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           padding: '7.5rem 12.5rem',
           backgroundImage: `url(${backgroundImage})`, // Use the selected image as the background
         }}
@@ -36,7 +36,7 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-start',
+            justifyContent: 'space-between',
             alignItems: 'flex-start',
             marginRight: '3.75rem',
             width: '960px',
@@ -52,11 +52,9 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
           <p
             style={{
               display: 'flex',
-              flexShrink: '0',
-              justifyContent: 'start',
+              justifyContent: 'flex-start',
               alignItems: 'center',
               padding: '1rem 1.5rem',
-              alignSelf: 'stretch',
               fontSize: '2rem',
               fontWeight: '300',
               fontStyle: 'italic',
@@ -70,7 +68,8 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
 
           <p
             style={{
-              display: '-web-kit-box',
+              display: '-webkit-box',
+              height: '345px',
               fontSize: '6rem',
               fontWeight: '600',
               overflow: 'hidden',
@@ -91,14 +90,14 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
             position: 'relative',
             width: '31.25rem',
             height: '52.5rem',
-            borderRadius: '8px',
+            borderRadius: '12px',
+            overflow: 'hidden',
           }}
         >
           {postImage ? (
-            <Image
+            <img
               src={`${postImage}`}
               alt={`header image of ${postTitle}}`}
-              fill
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           ) : null}
