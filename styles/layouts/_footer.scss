@@ -15,8 +15,15 @@
 
     &::after {
       content: '';
-      background-image: url('../../public/images/wave-part.svg');
-      background-repeat: repeat-x;
+      display: inline-block;
+      position: absolute;
+      bottom: 7px;
+      left: 12px;
+      width: 84%;
+      height: 6px;
+      background-image: url('../../public/images/link-underline.svg');
+      background-repeat: no-repeat;
+      opacity: 0.6;
       transition: opacity 150ms ease-in-out;
     }
 
@@ -71,6 +78,23 @@
         .item-text {
           width: 60px;
         }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    .email {
+      &::after {
+        left: 11px;
+        width: 100%;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .email {
+      &::after {
+        left: 22px;
       }
     }
   }
