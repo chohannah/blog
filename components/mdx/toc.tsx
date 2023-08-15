@@ -1,5 +1,9 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import tocbot from 'tocbot'
+import { motion } from 'framer-motion'
+import { staggerHalf, fadeInFull, fadeInUp } from '@/root/constants/animations'
 
 const Toc = () => {
   const [shouldAdjustTocHeight, setShouldAdjustTocHeight] = useState(false)
@@ -53,12 +57,23 @@ const Toc = () => {
   }, [shouldAdjustTocHeight])
 
   return (
-    <aside className="blog-post-content-toc">
-      <div className="blog-post-content-toc-wrapper">
-        <h2 className="toc-title">Table of Contents</h2>
-        <div className="toc-list-wrapper"></div>
-      </div>
-    </aside>
+    <motion.aside
+      className="blog-post-content-toc"
+      variants={staggerHalf}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <motion.div className="blog-post-content-toc-wrapper" variants={fadeInUp}>
+        <motion.h2 className="toc-title" variants={fadeInFull}>
+          Table of Contents
+        </motion.h2>
+        <motion.div
+          className="toc-list-wrapper"
+          variants={fadeInFull}
+        ></motion.div>
+      </motion.div>
+    </motion.aside>
   )
 }
 
