@@ -29,11 +29,16 @@
   .icon-arrow {
     @include flex;
     padding-left: $spacing-r-16;
+    transition: transform 250ms $ease-in-out-quart;
   }
 
   &:hover,
   &:focus {
-    opacity: 0.6;
+    opacity: 0.9;
+
+    .icon-arrow {
+      transform: translate3d(4px, -4px, 0);
+    }
   }
 
   @include responsive(T) {
