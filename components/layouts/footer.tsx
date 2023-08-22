@@ -15,8 +15,8 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-1 col-lg-2" aria-hidden></div>
           <div className="col-sm-4 col-md-10 col-lg-8">
-            <Link className="email" href="mailto:hi.joyejin@gmail.com">
-              {siteConfig.email}
+            <Link className="email" href={`mailto:${siteConfig.email}`}>
+              <span className="email-text">{siteConfig.email}</span>
             </Link>
 
             <ul className="links-list">
