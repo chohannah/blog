@@ -5,8 +5,4 @@
   height: 24px;
   border-radius: $radius-4;
   background-color: $bg-badge;
-
-  &:not(:last-child) {
-    margin-right: $spacing-r-8;
-  }
 }
