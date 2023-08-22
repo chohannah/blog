@@ -102,18 +102,9 @@
       }
 
       .tags-list {
-        &-item {
-          @include inline-flex;
-          @include text-style(misc-14);
-          padding: 0 $spacing-r-8;
-          height: 24px;
-          border-radius: $radius-4;
-          background-color: $bg-badge;
-
-          &:not(:last-child) {
-            margin-right: $spacing-r-8;
-          }
-        }
+        @include flex(start);
+        flex-wrap: wrap;
+        gap: $spacing-r-8;
       }
     }
   }
