@@ -4,34 +4,40 @@
 
   .email {
     @include flex(between);
-    @include text-style(button);
     display: inline-block;
-    position: relative;
     margin-bottom: $spacing-r-36;
     padding: $spacing-r-8 $spacing-r-16;
     border-radius: $radius-4;
     background-color: $bg;
     transition: background-color 350ms $ease-in-out-quart;
 
-    &::after {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      bottom: 7px;
-      left: 12px;
-      width: 84%;
-      height: 6px;
-      background-image: url('../../public/images/link-underline.svg');
-      background-repeat: no-repeat;
-      opacity: 0.6;
-      transition: opacity 150ms ease-in-out;
+    &-text {
+      @include text-style(button);
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-image: url('../../public/images/link-underline.svg');
+        background-repeat: no-repeat;
+        opacity: 0.6;
+        transition: opacity 150ms ease-in-out;
+      }
     }
 
     &:hover {
       background-color: rgba($green, 0.6);
 
-      &::after {
-        opacity: 0;
+      .email-text {
+        &::after {
+          opacity: 0;
+        }
       }
     }
   }
@@ -78,23 +84,6 @@
         .item-text {
           width: 60px;
         }
-      }
-    }
-  }
-
-  @include responsive(T) {
-    .email {
-      &::after {
-        left: 11px;
-        width: 100%;
-      }
-    }
-  }
-
-  @include responsive(D) {
-    .email {
-      &::after {
-        left: 22px;
       }
     }
   }
