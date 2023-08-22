@@ -4,7 +4,8 @@ export const siteConfig = {
   title: 'joyejin',
   description: 'Sharing thoughts on tech, mindfulness, design and more.',
   baseUrl: 'https://joyejin.com',
-  email: 'hi.joyejin@gmail.com',
+  // email: 'hi.joyejin@gmail.com',
+  email: 'hello@joyejin.com',
   locale: 'en-GB',
   navItems: {
     '/about': {
