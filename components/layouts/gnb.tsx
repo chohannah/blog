@@ -30,7 +30,7 @@ export default function GNB() {
                     width={42}
                     height={42}
                     src="/images/logo.svg"
-                    alt="logo of yejin's blog"
+                    alt="logo of hannah's blog"
                     priority
                   />
                 </Link>

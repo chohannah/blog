@@ -9,7 +9,7 @@ export async function GET(req: NextRequest, { params }: { params: any }) {
   const postTitle = searchParams.get('title')
   const postImage = searchParams.get('image')
   const postUrl = searchParams.get('url')
-  const backgroundImage = 'https://joyejin.com/images/og-image.png'
+  const backgroundImage = 'https://chohannah.com/images/og-image.png'
 
   const font = fetch(
     new URL(

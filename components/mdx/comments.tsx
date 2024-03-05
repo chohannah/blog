@@ -20,7 +20,7 @@ const Comments = () => {
     scriptElem.async = true
     scriptElem.crossOrigin = 'anonymous'
 
-    scriptElem.setAttribute('data-repo', 'yejinc/blog')
+    scriptElem.setAttribute('data-repo', 'chohannah/blog')
     scriptElem.setAttribute('data-repo-id', 'R_kgDOIXxszw')
     scriptElem.setAttribute('data-category-id', 'DIC_kwDOIXxsz84CYGZD')
     scriptElem.setAttribute('data-mapping', 'pathname')

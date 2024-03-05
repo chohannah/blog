@@ -34,12 +34,12 @@ const computedFields = {
       dateModified: doc.date,
       description: doc.summary,
       image: doc.image
-        ? `https://joyejin.com${doc.image}`
-        : `https://joyejin.com/api/og?title=${doc.title}`,
-      url: `https://joyejin.com/blog/${doc._raw.flattenedPath}`,
+        ? `https://chohannah.com${doc.image}`
+        : `https://chohannah.com/api/og?title=${doc.title}`,
+      url: `https://chohannah.com/blog/${doc._raw.flattenedPath}`,
       author: {
         '@type': 'Person',
-        name: 'Yejin Cho',
+        name: 'Hannah Cho',
       },
     }),
   },
