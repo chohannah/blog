@@ -83,6 +83,12 @@ $sidebar-tocs-margin-top-lg: 46.35vw;
           }
         }
       }
+
+      .tags-list {
+        @include flex(start);
+        flex-wrap: wrap;
+        gap: $spacing-r-8;
+      }
     }
   }
 
