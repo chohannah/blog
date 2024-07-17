@@ -30,7 +30,7 @@ export const siteConfig = {
     },
     {
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/chohannah/',
+      link: 'https://www.linkedin.com/in/chohannahin/',
     },
   ],
 }
